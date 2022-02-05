@@ -1,0 +1,20 @@
+.dashboardx{
+    width: 100vw;
+    height: 100vh;
+}
+.grid-rows-10 {
+    grid-template-rows: repeat(10, minmax(0, 1fr));
+}
+.row-span-9 {
+    grid-row: span 9 / span 9;
+}
+
+
+.col-span-4x {
+    grid-column: 2 / span 4;
+}
+@media (min-width: 768px) {
+    .md\:col-span-6x {
+        grid-column: 2 / span 6;
+    }
+}
