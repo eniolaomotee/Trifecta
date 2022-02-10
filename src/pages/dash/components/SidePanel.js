@@ -12,7 +12,7 @@ export default function SidePanel({active_selectr}) {
           <div className='bg-blue-900 p-3'>Logo</div>
           </div>
         <div className="text-left">
-          <Link to="/dash" className={active_selectr.dash}><FontAwesomeIcon icon={['far', 'folder']} className='mr-3'/>Dashboard</Link>
+          <Link to="/" className={active_selectr.dash}><FontAwesomeIcon icon={['far', 'folder']} className='mr-3'/>Dashboard</Link>
           <Link to="/dash_projects" className={active_selectr.projects}><FontAwesomeIcon icon={['far', 'folder-open']} className='mr-3'/>Projects</Link>
           <Link to="/dash_bids" className={active_selectr.bids}><FontAwesomeIcon icon={['fas', 'money-check-alt']} className='mr-3'/>Bids</Link>
           <Link to="/dash_companies" className={active_selectr.companies}><FontAwesomeIcon icon={['far', 'building']} className='mr-3'/>Companies</Link>
@@ -22,7 +22,7 @@ export default function SidePanel({active_selectr}) {
         </div>
         <div className='mt-8'>
           <Link to="/dash" className={active_selectr.logout}><FontAwesomeIcon icon={['fas', 'cog']} className='mr-3'/>Settings</Link>
-          <Link to="/dash" className={active_selectr.settings}><FontAwesomeIcon icon={['fas', 'sign-out-alt']} className='mr-3'/>Log Out</Link>
+          <Link to="/log_in" className={active_selectr.settings}><FontAwesomeIcon icon={['fas', 'sign-out-alt']} className='mr-3'/>Log Out</Link>
         </div>
   </div>
   );
