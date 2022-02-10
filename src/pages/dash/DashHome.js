@@ -1,4 +1,6 @@
 import React from 'react';
+import {Bar} from 'react-chartjs-2';
+import Chart from 'chart.js/auto'
 import SidePanel from './components/SidePanel';
 import DashHeader from './components/DashHeader';
 import {regularx, activex} from './components/SidePanel'
@@ -16,6 +18,37 @@ export default function DashHome() {
     logout: regularx,
     settings: regularx
 }
+
+const datax = {
+  labels: ['January', 'February', 'March',
+           'April', 'May'],
+  // datasets: [
+  //   {
+  //     label: 'Rainfall',
+  //     backgroundColor: 'rgba(75,192,192,1)',
+  //     borderColor: 'rgba(0,0,0,1)',
+  //     borderWidth: 2,
+  //     data: [65, 59, 80, 81, 59, 80, 81, 59, 80, 81, 56]
+  //   }
+  // ]
+  datasets: [
+    {
+        label: "Blue",
+        fillColor: "blue",
+        data: [2,8,5,4.3,7]
+    },
+    {
+        label: "Red",
+        fillColor: "red",
+        data: [3,7,2,8,5,4]
+    },
+    {
+        label: "Green",
+        fillColor: "green",
+        data: [2,8,5,3,7,4]
+    }
+]
+}
   return (
   <div className='dashboardx grid md:grid-cols-7 grid-cols-5'>
     <SidePanel active_selectr={active_selectr}/>
@@ -29,9 +62,21 @@ export default function DashHome() {
             <div className='bg-white col-span-1 rounded'>3-group</div>
           </div>
           <div className="row-span-6 || grid grid-rows-2 gap-2">
-            <div className='row-span-1 bg-white rounded'>
-              chart
-            </div>
+            <Bar className='row-span-1 bg-white rounded'
+              data={datax}
+              options={{
+                title:{
+                  display:true,
+                  text:'Average Rainfall per month',
+                  fontSize:20
+                },
+                legend:{
+                  display:true,
+                  position:'right'
+                }
+              }}
+            />
+
             <div className='row-span-1 bg-white'>
               table
             </div>

@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import { BrowserRouter as Router, Switch, Route, Link, Routes } from "react-router-dom";
 
-import LoginModal from './add_new_bid_form/LoginModal';
 import DashHome from './dash/DashHome';
 import DashProjects from './dash/DashProjects';
 import DashBids from './dash/DashBids';
@@ -31,9 +30,6 @@ export default function Routez() {
     <Router>
       <Switch>
         <Route exact path="/">
-          <LoginModal/>
-        </Route>
-        <Route path="/dash" >
           <DashHome/>
         </Route>
         <Route path="/dash_projects">
