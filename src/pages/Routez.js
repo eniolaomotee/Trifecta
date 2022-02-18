@@ -11,6 +11,7 @@ import DashEquipments from './dash/DashEquipments';
 import DashExpenses from './dash/DashExpenses';
 import LogIn from './login/LogIn';
 import SignUp from './login/SignUp';
+import './dash/DashHomeStyle.css'
 
 export default function Routez() {
   return( 
@@ -30,6 +31,12 @@ export default function Routez() {
     <Router>
       <Switch>
         <Route exact path="/">
+          <LogIn/>
+        </Route>
+        <Route path="/sign_up">
+          <SignUp/>
+        </Route>
+        <Route exact path="/dash">
           <DashHome/>
         </Route>
         <Route path="/dash_projects">
@@ -49,12 +56,6 @@ export default function Routez() {
         </Route>
         <Route path="/dash_expenses">
           <DashExpenses/>
-        </Route>
-        <Route path="/log_in">
-          <LogIn/>
-        </Route>
-        <Route path="/sign_up">
-          <SignUp/>
         </Route>
       </Switch>
     </Router>

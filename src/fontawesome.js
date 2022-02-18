@@ -7,10 +7,13 @@ import {
   faFolder,
   faBuilding,
   faEnvelope,
-  faUser
+  faUser,
+  faClock
 } from '@fortawesome/free-regular-svg-icons';
 
 import { 
+  faAngleLeft,
+  faAngleRight,
   faArchive,
   faBell,
   faCode, 
@@ -48,7 +51,10 @@ library.add(
   faBell,
   faEllipsisV,
   faPlus,
-  faSearch
+  faSearch,
+  faClock,
+  faAngleLeft,
+  faAngleRight
 
   
   // more icons go here

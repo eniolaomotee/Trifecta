@@ -23,7 +23,8 @@ export default function LogIn() {
                     <input type="password" className="pl-10 appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline " placeholder="password" id='login-password' name='login-password'/>
                     <div className='w-full text-right text-blue-800'><a>Forgot Password?</a></div>
                 </div>
-                <button name="login-btn" id="login-btn" className="p-3 bg-blue-500 text-white rounded" href="#" role="submit">Log In</button>
+                <Link to='/dash' name="login-btn" id="login-btn" className="p-3 bg-blue-500 text-white text-center  rounded" href="#" role="submit">Log In</Link>
+                {/* <Link to='/dash' name="login-btn" id="login-btn" className="p-3 bg-blue-500 text-white rounded" href="#" role="submit">Log In</Link> */}
                 <Link name="signin-btn" id="signin-btn" className="border text-blue-900 border-blue-900 text-center p-2" href="#" to="/sign_up" >Sign Up</Link>
           </form>
       </div>
