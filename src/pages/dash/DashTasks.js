@@ -16,16 +16,16 @@ export default function DashTasks() {
         settings: regularx
     }    
   return (
-    <div className='dashboardx grid md:grid-cols-7 grid-cols-5'>
+    <div className='dashboardx grid md:grid-cols-7 grid-cols-5 overflow-hidden'>
     <SidePanel active_selectr={active_selectr}/>
-    <div className='col-span-4 md:col-span-6 row-span-5 bg-blue-100 || grid grid-rows-10 gap-2'>
-      <DashHeader/>
+    <div className='main-body col-span-7 row-span-5 bg-colr || grid grid-rows-10 gap-2'>
+      <DashHeader title='Tasks'/>
 
-      <div className="row-span-9 ||  grid grid-rows-10 gap-2">
+      {/* <div className="row-span-9 ||  grid grid-rows-10 gap-2">
        
 
 
-      </div>
+      </div> */}
     </div>
   </div>
     );

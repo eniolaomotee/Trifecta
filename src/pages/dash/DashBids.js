@@ -29,14 +29,14 @@ export default function DashBids() {
     <AddBid show={show} handleShow={handleShow}/>
     <div className='dashboardx grid md:grid-cols-7 grid-cols-5'>
       <SidePanel active_selectr={active_selectr}/>
-      <div className='col-span-4 md:col-span-6 row-span-5 bg-blue-100 || grid grid-rows-10 gap-2'>
-        <DashHeader/>
+      <div className='main-body col-span-7 row-span-5 bg-colr || xgrid xgrid-rows-10 xgap-2'>
+        <DashHeader title='Bids'/>
 
-        <div className="row-span-9 ||  grid grid-rows-10 gap-2">
-          <div className='row-span-1 px-3 flex'>
-            <span className='absolute z-10 py-4 pl-3 pt-6 text-lg'><FontAwesomeIcon icon={["fas", "search"]} /></span>
-            <input type="text" className="shadow appearance-none border rounded w-9/12 py-2 pl-10 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline " placeholder="Enter Project Title" id='project-title' name='project-title'/>
-            <button onClick={handleShow} className='w-3/12 bg-blue-800 ml-2 py-2 text-white'><FontAwesomeIcon icon={['fas', 'plus']}/><span className='ml-2'>New Project</span></button>
+        <div className="contentx">
+          <div className='search-buttonx px-2 my-2 relative grid grid-cols-12 gap-2'>
+            <span className='absolute bottom-5 z-10 top-2 left-4 text-lg'><FontAwesomeIcon icon={["fas", "search"]} /></span>
+            <input type="text" className="col-span-10 shadow appearance-none border rounded xw-9/12 py-2 pl-10 text-blue-700 bg-gray-100 focus:outline-none focus:shadow-outline " placeholder="Enter Project Title" id='project-title' name='project-title'/>
+            <button onClick={handleShow} className='col-span-2 bg-blue-800 xml-3 py-2 text-white rounded'><FontAwesomeIcon icon={['fas', 'plus']}/><span className='ml-2'>New Project</span></button>
           </div>
           <div className="row-span-9 || grid grid-cols-3 grid-rows-3 gap-2 px-2">
             <div className=' bg-white rounded'>

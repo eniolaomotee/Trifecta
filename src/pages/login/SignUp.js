@@ -55,7 +55,7 @@ export default function SignUp() {
                     <input type="email" className="pl-10 appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline " placeholder="Confirm Password" id='login-email' name='login-email'/>
                 </div>
                 <button name="login-btn" id="login-btn" className="p-3 bg-blue-500 text-white rounded" href="#" role="submit">Sign Up</button>
-                <Link name="signin-btn" id="signin-btn" className="border text-blue-900 border-blue-900 text-center p-2" href="#" to="/log_in" >Log In</Link>
+                <Link name="signin-btn" id="signin-btn" className="border text-blue-900 border-blue-900 text-center p-2" href="#" to="/" >Log In</Link>
                 {/* <button name="signin-btn" id="signin-btn" className="border text-blue-900 border-blue-900 text-xm" href="#!" ><Link to="/log_in">Log In</Link></button> */}
           </form>
       </div>
