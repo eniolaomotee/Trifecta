@@ -5,6 +5,7 @@ import DashHeader from './components/DashHeader';
 import {userx} from './components/DashHeader';
 import {regularx, activex} from './components/SidePanel'
 import AddBid from '../add_new_bid_form/AddBid';
+import SearchSvg from '../../icons/dash-projects/SearchSvg';
 
 export default function DashBids() {
     var active_selectr = {
@@ -23,6 +24,16 @@ export default function DashBids() {
         if(show === "hidden"){ setShow("") }
         else{setShow("hidden")}
     }
+    
+    var  bids_temp = [
+          {name: 'Renovation and Construction works at GSSS Zadawa, Yobe State', TRF: 'TRF/NIG/49/2021', client: 'United Nations', winning_company: 'Acme Corporation', statusx: 'approved', date_submitted: 'May 31, 2019'},
+          {name: 'Renovation and Construction works at GSSS Zadawa, Yobe State', TRF: 'TRF/NIG/49/2021', client: 'United Nations', winning_company: 'Acme Corporation', statusx: 'approved', date_submitted: 'May 31, 2019'},
+          {name: 'Renovation and Construction works at GSSS Zadawa, Yobe State', TRF: 'TRF/NIG/49/2021', client: 'United Nations', winning_company: 'Acme Corporation', statusx: 'rejected', date_submitted: 'May 31, 2019'},
+          {name: 'Renovation and Construction works at GSSS Zadawa, Yobe State', TRF: 'TRF/NIG/49/2021', client: 'United Nations', winning_company: 'Acme Corporation', statusx: 'approved', date_submitted: 'May 31, 2019'},
+          {name: 'Renovation and Construction works at GSSS Zadawa, Yobe State', TRF: 'TRF/NIG/49/2021', client: 'United Nations', winning_company: 'Acme Corporation', statusx: 'pending', date_submitted: 'May 31, 2019'},
+          {name: 'Renovation and Construction works at GSSS Zadawa, Yobe State', TRF: 'TRF/NIG/49/2021', client: 'United Nations', winning_company: 'Acme Corporation', statusx: 'approved', date_submitted: 'May 31, 2019'},
+          {name: 'Renovation and Construction works at GSSS Zadawa, Yobe State', TRF: 'TRF/NIG/49/2021', client: 'United Nations', winning_company: 'Acme Corporation', statusx: 'approved', date_submitted: 'May 31, 2019'}
+        ]
   return (
   <div>
 
@@ -34,110 +45,36 @@ export default function DashBids() {
 
         <div className="contentx">
           <div className='search-buttonx px-2 my-2 relative grid grid-cols-12 gap-2'>
-            <span className='absolute bottom-5 z-10 top-2 left-4 text-lg'><FontAwesomeIcon icon={["fas", "search"]} /></span>
+            <span className='absolute bottom-5 z-10 top-3 left-4 text-lg txt-darkblue3'>
+              <SearchSvg classx='stroke-current w-5 h-5'/>
+            </span>
+            {/* <span className='absolute bottom-5 z-10 top-2 left-4 text-lg'><FontAwesomeIcon icon={["fas", "search"]} /></span> */}
             <input type="text" className="col-span-10 shadow appearance-none border rounded xw-9/12 py-2 pl-10 text-blue-700 bg-gray-100 focus:outline-none focus:shadow-outline " placeholder="Enter Project Title" id='project-title' name='project-title'/>
-            <button onClick={handleShow} className='col-span-2 bg-blue-800 xml-3 py-2 text-white rounded'><FontAwesomeIcon icon={['fas', 'plus']}/><span className='ml-2'>New Project</span></button>
+            <button onClick={handleShow} className='col-span-2 bg-bluex xml-3 py-2 text-white rounded'><FontAwesomeIcon icon={['fas', 'plus']}/><span className='ml-2 text-sm'>Add New Bid</span></button>
           </div>
           <div className="row-span-9 || grid grid-cols-3 grid-rows-3 gap-2 px-2">
-            <div className=' bg-white rounded'>
-              <div className='p-3'>
-                <div className='flex'><span>TRF/NIG/49/2021</span><span className='ml-auto bg-green-100 text-green-500 rounded-lg text-xs p-1 px-2'>Approved</span></div>
-                <div className=' text-lg py-3 text-justifyx'>Renovation and Construction works at GSSS Zadawa, Yobe State</div>
-                <div className='flex text-gray-500'><span>client:</span><span className='ml-auto'>Winning Company:</span></div>
-                <div className='flex'><span>United Nations </span><span className='ml-auto'>Acme Corporation</span></div>
-              </div>
-              <div className='w-full bborder border-t-2 flex px-2'>
-                <div className='py-2 pr-2'><span className='pl-2 text-sm text-gray-400'>Submited</span>May 31, 2019</div>
-                <button className='bg-blue-800 text-white px-1 rounded my-1 ml-auto'>View Details</button>
-              </div>
-            </div>
-            <div className=' bg-white rounded'>
-              <div className='p-3'>
-                <div className='flex'><span>TRF/NIG/49/2021</span><span className='ml-auto bg-green-100 text-green-500 rounded-lg text-xs p-1 px-2'>Approved</span></div>
-                <div className=' text-lg py-3 text-justifyx'>Renovation and Construction works at GSSS Zadawa, Yobe State</div>
-                <div className='flex text-gray-500'><span>client:</span><span className='ml-auto'>Winning Company:</span></div>
-                <div className='flex'><span>United Nations </span><span className='ml-auto'>Acme Corporation</span></div>
-              </div>
-              <div className='w-full bborder border-t-2 flex px-2'>
-                <div className='py-2 pr-2'><span className='pl-2 text-sm text-gray-400'>Submited</span>May 31, 2019</div>
-                <button className='bg-blue-800 text-white px-1 rounded my-1 ml-auto'>View Details</button>
-              </div>
-            </div>
-            <div className=' bg-white rounded'>
-              <div className='p-3'>
-                <div className='flex'><span>TRF/NIG/49/2021</span><span className='ml-auto bg-red-100 text-red-500 rounded-lg text-xs p-1 px-2'>Rejected</span></div>
-                <div className=' text-lg py-3 text-justifyx'>Renovation and Construction works at GSSS Zadawa, Yobe State</div>
-                <div className='flex text-gray-500'><span>client:</span><span className='ml-auto'>Winning Company:</span></div>
-                <div className='flex'><span>United Nations </span><span className='ml-auto'>Acme Corporation</span></div>
-              </div>
-              <div className='w-full bborder border-t-2 flex px-2'>
-                <div className='py-2 pr-2'><span className='pl-2 text-sm text-gray-400'>Submited</span>May 31, 2019</div>
-                <button className='bg-blue-800 text-white px-1 rounded my-1 ml-auto'>View Details</button>
-              </div>
-            </div>
-            <div className=' bg-white rounded'>
-              <div className='p-3'>
-                <div className='flex'><span>TRF/NIG/49/2021</span><span className='ml-auto bg-green-100 text-green-500 rounded-lg text-xs p-1 px-2'>Approved</span></div>
-                <div className=' text-lg py-3 text-justifyx'>Renovation and Construction works at GSSS Zadawa, Yobe State</div>
-                <div className='flex text-gray-500'><span>client:</span><span className='ml-auto'>Winning Company:</span></div>
-                <div className='flex'><span>United Nations </span><span className='ml-auto'>Acme Corporation</span></div>
-              </div>
-              <div className='w-full bborder border-t-2 flex px-2'>
-                <div className='py-2 pr-2'><span className='pl-2 text-sm text-gray-400'>Submited</span>May 31, 2019</div>
-                <button className='bg-blue-800 text-white px-1 rounded my-1 ml-auto'>View Details</button>
-              </div>
-            </div>
-            <div className=' bg-white rounded'>
-              <div className='p-3'>
-                <div className='flex'><span>TRF/NIG/49/2021</span><span className='ml-auto bg-green-100 text-green-500 rounded-lg text-xs p-1 px-2'>Approved</span></div>
-                <div className=' text-lg py-3 text-justifyx'>Renovation and Construction works at GSSS Zadawa, Yobe State</div>
-                <div className='flex text-gray-500'><span>client:</span><span className='ml-auto'>Winning Company:</span></div>
-                <div className='flex'><span>United Nations </span><span className='ml-auto'>Acme Corporation</span></div>
-              </div>
-              <div className='w-full bborder border-t-2 flex px-2'>
-                <div className='py-2 pr-2'><span className='pl-2 text-sm text-gray-400'>Submited</span>May 31, 2019</div>
-                <button className='bg-blue-800 text-white px-1 rounded my-1 ml-auto'>View Details</button>
-              </div>
-            </div>
-            <div className=' bg-white rounded'>
-              <div className='p-3'>
-                <div className='flex'><span>TRF/NIG/49/2021</span><span className='ml-auto bg-green-100 text-green-500 rounded-lg text-xs p-1 px-2'>Approved</span></div>
-                <div className=' text-lg py-3 text-justifyx'>Renovation and Construction works at GSSS Zadawa, Yobe State</div>
-                <div className='flex text-gray-500'><span>client:</span><span className='ml-auto'>Winning Company:</span></div>
-                <div className='flex'><span>United Nations </span><span className='ml-auto'>Acme Corporation</span></div>
-              </div>
-              <div className='w-full bborder border-t-2 flex px-2'>
-                <div className='py-2 pr-2'><span className='pl-2 text-sm text-gray-400'>Submited</span>May 31, 2019</div>
-                <button className='bg-blue-800 text-white px-1 rounded my-1 ml-auto'>View Details</button>
-              </div>
-            </div>
-            <div className=' bg-white rounded'>
-              <div className='p-3'>
-                <div className='flex'><span>TRF/NIG/49/2021</span><span className='ml-auto bg-green-100 text-green-500 rounded-lg text-xs p-1 px-2'>Approved</span></div>
-                <div className=' text-lg py-3 text-justifyx'>Renovation and Construction works at GSSS Zadawa, Yobe State</div>
-                <div className='flex text-gray-500'><span>client:</span><span className='ml-auto'>Winning Company:</span></div>
-                <div className='flex'><span>United Nations </span><span className='ml-auto'>Acme Corporation</span></div>
-              </div>
-              <div className='w-full bborder border-t-2 flex px-2'>
-                <div className='py-2 pr-2'><span className='pl-2 text-sm text-gray-400'>Submited</span>May 31, 2019</div>
-                <button className='bg-blue-800 text-white px-1 rounded my-1 ml-auto'>View Details</button>
-              </div>
-            </div>
-            <div className=' bg-white rounded'>
-              <div className='p-3'>
-                <div className='flex'><span>TRF/NIG/49/2021</span><span className='ml-auto bg-yellow-100 text-yellow-500 rounded-lg text-xs p-1 px-2'>pending</span></div>
-                <div className=' text-lg py-3 text-justifyx'>Renovation and Construction works at GSSS Zadawa, Yobe State</div>
-                <div className='flex text-gray-500'><span>client:</span><span className='ml-auto'>Winning Company:</span></div>
-                <div className='flex'><span>United Nations </span><span className='ml-auto'>Acme Corporation</span></div>
-              </div>
-              <div className='w-full bborder border-t-2 flex px-2'>
-                <div className='py-2 pr-2'><span className='pl-2 text-sm text-gray-400'>Submited</span>May 31, 2019</div>
-                <button className='bg-blue-800 text-white px-1 rounded my-1 ml-auto'>View Details</button>
-              </div>
-            </div>
-
-
-
+            {bids_temp.map(e=>{
+              var status_cn;
+              if(e.statusx === 'approved'){status_cn = 'ml-auto capitalize bg-green-100 text-green-500 rounded-lg text-xs p-1 px-2'}
+              else if(e.statusx === 'rejected'){status_cn = 'ml-auto capitalize bg-red-100 text-red-500 rounded-lg text-xs p-1 px-2'}
+              else{status_cn = 'ml-auto capitalize bg-amber-100 text-amber-500 rounded-lg text-xs p-1 px-2'}
+              
+              return(
+                <div className=' bg-white rounded txt-darkblue2'>
+                  <div className='p-3'>
+                    <div className='flex'><span>{e.TRF}</span><span className={status_cn}>{e.statusx}</span></div>
+                    <div className=' text-lg py-3 text-justifyx'>{e.name}</div>
+                    <div className='flex txt-greyed-out'><span>client:</span><span className='ml-auto'>Winning Company:</span></div>
+                    <div className='flex'><span>{e.client}</span><span className='ml-auto'>{e.winning_company}</span></div>
+                  </div>
+                  <div className='w-full bborder border-t-2 flex px-2'>
+                    <div className='py-2 pr-2'><span className='px-2 text-sm txt-greyed-out'>Submited</span>{e.date_submitted}</div>
+                    <button className='bg-bluex text-white px-1 rounded my-1 ml-auto'>View Details</button>
+                  </div>
+                </div>
+              );
+              })
+            }
           </div>
 
 

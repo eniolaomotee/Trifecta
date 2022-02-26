@@ -18,7 +18,7 @@ export default function AddBid(props) {
             <form className="grid grid-cols-4 grid-row-7 gap-4">
                     <div className="col-span-2 text-left">
                         <label className='text-blue-900' htmlFor="project-title">Tender Title</label><br></br>
-                        <input type="text" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline " placeholder="Enter Project Title" id='project-title' name='project-title'/>
+                        <input type="text" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline " placeholder="Enter Bid Title" id='project-title' name='project-title'/>
                     </div>
                     <div className="col-span-2 text-left">
                         <label className='text-blue-900' htmlFor="client-name">Client</label>

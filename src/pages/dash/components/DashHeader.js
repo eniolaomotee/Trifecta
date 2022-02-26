@@ -14,7 +14,7 @@ export default function DashHeader(props) {
   return (
     
     <div className="headr bg-white flex pr-4">
-        <div className='my-auto text-lg pl-3 font-bold text-indigo-900'>
+        <div className='my-auto text-lg pl-3 font-bold txt-headr'>
           {props.title}
         </div>
         <div className=' text-blue-900 ml-auto mr-3 flex h-full align-middle py-4'>

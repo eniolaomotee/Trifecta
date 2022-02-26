@@ -4,6 +4,7 @@ import DashHeader from './components/DashHeader';
 import {userx} from './components/DashHeader';
 import {regularx, activex} from './components/SidePanel'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import SearchSvg from '../../icons/dash-projects/SearchSvg';
 
 export default function DashCompanies() {
     var active_selectr = {
@@ -32,9 +33,11 @@ export default function DashCompanies() {
 
       <div className="px-2 pr-5">
         <div className='search-buttonx xpx-2 my-2 relative grid grid-cols-12 gap-2'>
-          <span className='absolute bottom-5 z-10 top-2 left-4 text-lg'><FontAwesomeIcon icon={["fas", "search"]} /></span>
+          <span className='absolute bottom-5 z-10 top-3 left-4 text-lg txt-darkblue3'>
+            <SearchSvg classx='stroke-current w-5 h-5'/>
+          </span>
           <input type="text" className="col-span-10 shadow appearance-none border rounded xw-9/12 py-2 pl-10 text-blue-700 bg-gray-100 focus:outline-none focus:shadow-outline " placeholder="Enter Comapny Name" id='project-title' name='project-title'/>
-          <button className='col-span-2 bg-blue-800 xml-3 py-2 text-white rounded'><FontAwesomeIcon icon={['fas', 'plus']}/><span className='ml-2'>Add New Company</span></button>
+          <button className='col-span-2 bg-bluex xml-3 py-2 text-white rounded'><FontAwesomeIcon icon={['fas', 'plus']}/><span className='ml-2 text-sm'>Add New Company</span></button>
         </div>
         <div className='bg-white table-holdr'>
           <table className="xrow-span-9 xpl-20 w-full table-auto">
@@ -52,8 +55,9 @@ export default function DashCompanies() {
               </tr>
               {companiesx.map(e=>{
                 let status_colr;
-                if(e.reg_status === 'not registered'){status_colr = 'bg-red-200 text-red-800 p-3 mr-3 rounded capitalized'}
-                else{status_colr = 'bg-green-200 text-green-800 p-3 mr-3 rounded capitalized'}
+                if(e.reg_status === 'not registered'){status_colr = 'bg-red-200 text-red-800 p-3 rounded capitalized w-full text-center'}
+                else{status_colr = 'bg-green-200 text-green-800 p-3 rounded capitalized w-full text-center'}
+                // status_colr = 'bg-green-200 xtext-green-800 xp-3 xmr-3 xrounded xcapitalized xm-2 text-center w-full'
                 return(<tr className='hover:bg-gray-300'>
                   <td className='pl-10'>
                     <span className='flex'>
@@ -67,7 +71,7 @@ export default function DashCompanies() {
                   <td>{e.email}</td>
                   <td>{e.address}</td>
                   <td>{e.contact}</td>
-                  <td><span className={status_colr}>{e.reg_status}</span></td>
+                  <td><div className={status_colr}>{e.reg_status}</div></td>
                   <td><FontAwesomeIcon icon={['fas','ellipsis-v']}/></td>
                 </tr>);})
               } 
