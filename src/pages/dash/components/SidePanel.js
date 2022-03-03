@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Logo from '../../../images/logo.png'
 import BuildingSvg from '../../../icons/dash-projects/SearchSvg';
 import BidIconSvg from '../../../icons/dash-sidepanel/BidIconSvg';
 import FolderOpenSvg from '../../../icons/dash-sidepanel/FolderOpenSvg';
@@ -18,8 +19,9 @@ export default function SidePanel({active_selectr}) {
     
   return (
   <div className="fixed xcol-span-1 row-span-5 bg-white sidepanel z-10 shadow-lg xfixed">
-        <div className=" mb-10 pb-6 pt-1 px-3">
-          <div className='bg-blue-900 text-white text-center p-3'>Logo</div>
+        <div className=" my-3 mb-6 w-8/12 mx-auto">
+          {/* <div className='bg-blue-900 text-white text-center p-3'>Logo</div> */}
+          <img src={Logo}/>
         </div>
         <div className="text-left">
           <Link to="/dash" className={active_selectr.dash}><DashHomeIcon classx='inline w-5 mr-3 stroke-current'/>Dashboard</Link>
@@ -30,7 +32,7 @@ export default function SidePanel({active_selectr}) {
           <Link to="/dash_equipments" className={active_selectr.equipments}><EquipmentsIcon classx='inline w-5 mr-3 stroke-current'/>Equipments</Link>
           <Link to="/dash_expenses" className={active_selectr.expenses}><ExpensesIcon classx='inline w-5 mr-3 stroke-current'/>Expenses</Link>
         </div>
-        <div className='mt-8'>
+        <div className='xmt-8 absolute bottom-3 '>
           <Link to="/dash" className={active_selectr.logout}><SettingsIcon classx='inline w-5 mr-3 stroke-current'/>Settings</Link>
           <Link to="/" className={active_selectr.settings}><LogOutIcon classx='inline w-5 mr-3 stroke-current'/>Log Out</Link>
         </div>

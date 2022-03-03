@@ -1,12 +1,10 @@
 import React from 'react';
-import {Bar} from 'react-chartjs-2';
-import Chart from 'chart.js/auto'
-import {userx} from './components/DashHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import {userx} from './components/DashHeader';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SidePanel from './components/SidePanel';
 import DashHeader from './components/DashHeader';
 import {regularx, activex} from './components/SidePanel'
-import './DashHomeStyle.css'
+// import './DashHomeStyle.css'
 import HomeTableTab from './components/dash_home/HomeTableTab';
 // import FolderOpenSvg from '../../icons/dash-sidepanel/FolderOpenSvg';
 import FolderSVG from '../../icons/dash-home/FolderSVG';
@@ -14,6 +12,8 @@ import BidsSVG from '../../icons/dash-home/BidsSVG';
 import TasksSVG from '../../icons/dash-home/TasksSVG';
 import CalenderWidget from './components/dash_home/CalenderWidget';
 import WeeklySchedule from './components/dash_home/WeeklySchedule';
+import BarChartx from './components/dash_home/Charts/BarChartx';
+import RadarChartx from './components/dash_home/Charts/RadarChartx';
 
 
 export default function DashHome() {
@@ -29,31 +29,7 @@ export default function DashHome() {
     settings: regularx
 }
 
-const datax = {
-  labels: ['January', 'February', 'March',
-           'April', 'May'],
 
-  datasets: [
-    {
-        label: "Approved",
-        fillColor: "blue",
-        backgroundColor: 'rgba(30, 12, 255, 1)',
-        data: [2,5.8,5,4.3,7]
-    },
-    {
-      label: "Pending",
-      fillColor: "red",
-      backgroundColor: 'rgba(135, 106, 255, 1)',
-      data: [3,7,2,8,5,4]
-    },
-    {
-      label: "Rejected",
-      fillColor: "green",
-      backgroundColor: 'rgba(0, 201, 255, 1)',
-      data: [2,8,5,3,7,4]
-    }
-]
-}
 
 
 // var temp_table = [
@@ -63,7 +39,7 @@ const datax = {
 //   {namex: 'Bay City Expansion Project', client: 'Acme International', progress: '45%', amount: 34000},
 //   {namex: 'Bay City Expansion Project', client: 'Acme International', progress: '45%', amount: 34000},
 // ]    
-var naira_sign = '\u20a6';    
+// var naira_sign = '\u20a6';    
 
   return (
   <div className='dashboardx'>
@@ -118,21 +94,8 @@ var naira_sign = '\u20a6';
           </div>
           
           <div className="mt-2">
-            <div className='bg-white rounded  xchartr'>
-              <Bar className=''
-                data={datax}
-                options={{
-                  title:{
-                    display:true,
-                    text:'Average Rainfall per month',
-                    fontSize:20
-                  },
-                  legend:{
-                    display:true,
-                    position:'right'
-                  }
-                }}
-              />
+            <div className='bg-white rounded xchartr p-2'>
+              <BarChartx/>
             </div>
 
             <HomeTableTab/>
@@ -141,8 +104,12 @@ var naira_sign = '\u20a6';
         </div>
         <div className='right-column col-span-1 || xgrid xgrid-rows-2 gap-2'>
           <CalenderWidget/>
-          <div className='radar-chart bg-white rounded mt-2 h-52'>
-            radar-chart
+          <div className='radar-chartx-container bg-white rounded mt-2 xh-52'>
+            {/* radar-chart */}
+            <h4 className=' p-2 pb-0 text-lg font-bold'>Projects</h4>
+            <div className='radar-chartx px-auto xbg-slate-800 mx-auto'>
+              <RadarChartx/>
+            </div>
           </div>
           <div className=''>
           </div>

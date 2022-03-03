@@ -31,7 +31,7 @@ export default function DashCompanies() {
     <div className='main-body bg-colr'>
       <DashHeader title='Companies'/>
 
-      <div className="px-2 pr-5">
+      <div className="px-2 pr-5 txt-dark-bluex">
         <div className='search-buttonx xpx-2 my-2 relative grid grid-cols-12 gap-2'>
           <span className='absolute bottom-5 z-10 top-3 left-4 text-lg txt-darkblue3'>
             <SearchSvg classx='stroke-current w-5 h-5'/>
@@ -66,13 +66,13 @@ export default function DashCompanies() {
                       </div>
                       {e.company_name}
                     </span>
-                    <div className='text-gray-400 text-sm'>RC {e.rc}</div>
+                    <div className='txt-greyed-out text-sm'>RC {e.rc}</div>
                   </td>
                   <td>{e.email}</td>
                   <td>{e.address}</td>
                   <td>{e.contact}</td>
-                  <td><div className={status_colr}>{e.reg_status}</div></td>
-                  <td><FontAwesomeIcon icon={['fas','ellipsis-v']}/></td>
+                  <td><div className='xw-24'><div className={status_colr}>{e.reg_status}</div></div></td>
+                  <td><FontAwesomeIcon icon={['fas','ellipsis-v']} className='xabsolute xright-0 mr-0'/></td>
                 </tr>);})
               } 
           

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Logo from '../../images/logo.png';
 
 
 export default function SignUp() {
@@ -9,9 +10,10 @@ export default function SignUp() {
       {/* <div className='col-span-1 md:inline-block hidden bg-blue-500'>
       </div> */}
       <div className='col-span-1 md:flex hidden bg-dark-bluex justify-center items-center h-screen'>
-        <div className='m-auto mt-auto h-12 w-40 text-center py-2 bg-blue-900 text-white'>Logo</div>
+        <img src={Logo}/>
+        {/* <div className='m-auto mt-auto h-12 w-40 text-center py-2 bg-blue-900 text-white'>Logo</div> */}
       </div>
-      <div className="col-span-3 md:col-span-2 md:px-28 px-10">
+      <div className="col-span-3 md:col-span-2 md:px-28 px-10 my-auto">
           <h1 className='p-2 pl-0 text-3xl text-left'>Welcome to <span classNAme="text-blue-600">TERP</span></h1>
           <h4 className='pl-0 text-left'>Create an account to gain access into the Trifecta Enterprise Resource software (TERP)</h4>
           <form className='grid grid-cols-2 gap-6 mt-10'>

@@ -1,11 +1,12 @@
-*{
+/* *{
         font-family: "Mulish"; 
-}
+} */
 /* colors------------------------------------------------------------------------------- */
 :root{
     --grey-rep:#86A2B9;
     --blue-rep:#138FFF;
     --dark-blue-rep: #152C5B;
+    --success: #4BDE97;
     --warning: #FFB648;
     --danger: #F55B5D;
     --light-purplex: rgba(95, 46, 234, 0.1);
@@ -14,12 +15,22 @@
     --darkblue1: #344E6C;
     --darkblue2: #152C5B;
     --darkblue-less-emphasis: #8F9CB6;
+    --darkblue-less-emphasis2: #7D9EB5;
 }
 /* background colors */
 .bg-colr{background-color: #E5E5E5;}
 .bg-dark-bluex{background-color: var(--dark-blue-rep);}
 .bg-bluex{background-color: var(--blue-rep);}
 .bg-purplex{background-color: var(--light-purplex);}
+
+.bg-pass{background-color: rgba(75, 222, 151, 0.1)}
+.bg-warn{background-color: rgba(255, 172, 50, 0.1)}
+.bg-fail{background-color: rgba(245, 91, 93, 0.1)}
+
+.bg-pass{}
+.bg-warn{}
+.bg-fail{}
+
 
 /* text colors */
 .txt-dark-bluex{color: var(--dark-blue-rep);}
@@ -31,8 +42,17 @@
 .txt-darkblue3{color: var(--darkblue2);}
 .txt-greyed-out{color: var(--darkblue-less-emphasis);}
 
+.txt-pass{color: var(--success);}
+.txt-warn{color: var(--warning);}
+.txt-fail{color: var(--danger);}
+
+
+.xpass{color: var(--success);background-color: rgba(75, 222, 151, 0.1)}
+.xwarn{color: var(--warning);background-color: rgba(255, 172, 50, 0.1)}
+.xfail{color: var(--danger);background-color: rgba(245, 91, 93, 0.1)}
+
 /* border color */
-.active-sidepanel{}
+/* .active-sidepanel{} */
 
 /* ---colors end -----------------------------------------------------------------------*/
 body{ overflow-x: hidden; }
@@ -77,9 +97,11 @@ body{ overflow-x: hidden; }
     /* height: 20vh; */
     width: 100%;
 }
+.radar-chartx{height: 300px; width: 300px;}
 
 .ongiong-pending-tab>.active{
     border-bottom: 2px blue solid;
+    /* box-sizing: border-box; */
 }
 .table-holdr{
         min-height: 100vh;

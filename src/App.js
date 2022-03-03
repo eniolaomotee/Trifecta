@@ -1,5 +1,5 @@
-import './App.css';
 import Routez from './pages/Routez';
+import './pages/dash/DashHomeStyle.css';
 
 function App() {
   return (

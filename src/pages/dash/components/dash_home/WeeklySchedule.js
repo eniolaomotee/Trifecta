@@ -10,7 +10,7 @@ export default function WeeklySchedule() {
       ]
   return (
     <div className=' xbg-white'>
-        <div className='schedule my-3 text-blue-900'>
+        <div className='schedule my-3 xxtxt-darkblue3 font-bold'>
             Weekly Schedule
         </div>
         {eventsx.map(e=>(

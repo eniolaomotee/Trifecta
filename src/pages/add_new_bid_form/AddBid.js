@@ -16,32 +16,36 @@ export default function AddBid(props) {
             </div>
                     <h1 className=' p-2 pl-0 text-3xl text-blue-900 text-left'>Add New Bid</h1>
             <form className="grid grid-cols-4 grid-row-7 gap-4">
-                    <div className="col-span-2 text-left">
+                    <div className="col-span-4 text-left">
                         <label className='text-blue-900' htmlFor="project-title">Tender Title</label><br></br>
-                        <input type="text" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline " placeholder="Enter Bid Title" id='project-title' name='project-title'/>
+                        <input type="text" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline " placeholder="Enter Tender Title" id='tender-title' name='tender-title'/>
                     </div>
+
                     <div className="col-span-2 text-left">
                         <label className='text-blue-900' htmlFor="client-name">Client</label>
                         <input type="text"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="client-name" type="text" placeholder="Enter Client Name" name='client-name'/>
                     </div>
-
-                    {/* issue */}
+                    <div className="col-span-2 text-left"> 
+                        <label className='text-blue-900' htmlFor="client-department">Client Department</label>
+                        <input type="text"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="client-department" type="text" placeholder="Enter Client Department" name='client-department'/>
+                    </div>
+                    <div className="col-span-2 text-left"> 
+                        <label className='text-blue-900' htmlFor="contract-sum">Contract Sum</label>
+                        <input type="text"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="contract-sum" type="text" placeholder="Ten Million, Two Hundred and Seven Thousand Naira " name='contract-sum'/>
+                    </div>
+                    <div className="col-span-1 text-left"> 
+                        <label className='text-blue-900' htmlFor="tender-number">Tender Number</label>
+                        <input type="text"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="tender-number" type="text" placeholder="TRF/NIG/31/2021" name='tender-number'/>
+                    </div>
+                    <div className="col-span-1 text-left"> 
+                        <label className='text-blue-900' htmlFor="date-submittd">Date Submitted</label>
+                        <input type="date"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="date-submittd" type="text" placeholder="2/3/2021" name='date-submittd'/>
+                    </div>
+                    {/* issue yet to be fixed */}
                     <div className="col-span-4 text-left">
                         <label className='text-blue-900' htmlFor="clent-name">Bidding Companies</label>
                         <input type="text"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Enter Client Name"/>
-                        {/* <Multiselectr /> */}
-                        {/* <ReactSelect
-                            options={colourOptions}
-                            isMulti
-                            closeMenuOnSelect={false}
-                            hideSelectedOptions={false}
-                            components={{
-                                Option
-                            }}
-                            onChange={this.handleChange}
-                            allowSelectAll={true}
-                            value={this.state.optionSelected}
-                        /> */}
+                        
                     </div>
 
                     <div className="md:col-span-2 col-span-4 text-left">
@@ -49,10 +53,10 @@ export default function AddBid(props) {
                         <input type="text" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" placeholder="Enter Winning Company" id='winning-company' name='winning-company'/>
                     </div>
                     <div className="md:col-span-2 col-span-3 text-left">
-                        <label className='text-blue-900' htmlFor="contract-sum">Contract Sum</label><br></br>
-                        <input type="text" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" placeholder="Enter Contract Sum" id='contract-sum' name='contract-sum'/>
+                        <label className='text-blue-900' htmlFor="bid-scope">Bid Scope</label><br></br>
+                        <input type="text" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" placeholder="Enter bid Scope" id='bid-scope' name='bid-scope'/>
                     </div>
-                    <div className="md:col-span-1 col-span-4 text-left">
+                    {/* <div className="md:col-span-1 col-span-4 text-left">
                         <label className='text-blue-900' htmlFor="reference-number">Reference Number</label><br></br>
                         <input type="text" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" placeholder="TRF/NIG/31/2021" id='reference-number' name='reference-number'/>
                     </div>
@@ -67,31 +71,31 @@ export default function AddBid(props) {
                             <option  className="text-green-700" value="completed">Completed</option>
                             <option className="text-red-500" value="failed">Failed</option>
                         </select>
-                    </div>
+                    </div> */}
 
                     {/* issue */}
-                    <div className="md:col-span-1 col-span-4 text-left">
+                    {/* <div className="md:col-span-1 col-span-4 text-left">
                         <label className='text-blue-900' htmlFor="date-submitted">Project Team</label><br></br>
                         <ProjectMembersAvatar/>
-                    </div>
+                    </div> */}
 
                     <div className="md:col-span-2 col-span-4 row-span-5 text-left">
                         <label className='text-blue-900 w-full'>Attachment Files (PDF, .docx, jpg formats)</label><br></br>
                         <div className='grid grid-cols-4 gap-3'>
-                            <div className="col-span-2 text-left">
-                                <label className='text-blue-900' htmlFor="date-submitted">RFQ:</label><br></br>
-                                <input type="file" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" placeholder="1/1/2021" id='date-submitted' name='date-submitted'/>
-                            </div>
-                            <div className="col-span-2 text-left">
+                            <div className="col-span-4 text-left">
                                 <label className='text-blue-900' htmlFor="date-submitted">RFQ:</label><br></br>
                                 <input type="file" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" placeholder="1/1/2021" id='date-submitted' name='date-submitted'/>
                             </div>
                         </div>
                     </div>
-                    <div className="md:col-span-2 col-span-4 text-left">
+                    <div className="col-span-2 text-left">
+                        <label className='text-blue-900' htmlFor="date-submitted">Financial Credentials:</label><br></br><br></br>
+                        <input type="file" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" placeholder="1/1/2021" id='date-submitted' name='date-submitted'/>
+                    </div>
+                    {/* <div className="md:col-span-2 col-span-4 text-left">
                         <label className='text-blue-900' htmlFor="bid-scope">Scope</label><br></br>
                         <textarea className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" placeholder='Enter Bid Scope' name='bid-scope'/>
-                    </div>
+                    </div> */}
                     <input type="submit" className="md:col-start-4 col-start-3 md:col-span-1 col-span-2 shadow appearance-none border rounded w-full py-2 px-3 text-white bg-blue-800 mt-2 focus:outline-none focus:shadow-outline" placeholder="1/1/2021" id='date-submitted' value='Create Bid'/>
             </form>
         </div>
