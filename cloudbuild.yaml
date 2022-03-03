@@ -2,7 +2,7 @@ steps:
 
 - id: build
   name: 'gcr.io/cloud-builders/gcloud'
-  entrypoint: 'bash'
+  # entrypoint: 'bash'
   args:
   - '-c'
   - |
