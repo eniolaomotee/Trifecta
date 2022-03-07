@@ -1,5 +1,9 @@
 steps:
   name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: 'bash'
-  args: ['-c', 'gcloud app deploy app.yaml']
-  
+  args:
+  - '-c'
+  - |
+    gcloud source repos clone terp-frontend --project=terp-338409
+    git checkout master
+    gcloud app deploy app.yaml
