@@ -6,7 +6,4 @@ steps:
   args:
   - '-c'
   - |
-    gcloud source repos clone terp-frontend --project=terp-338409
-    git checkout master
     gcloud app deploy app.yaml
-- logging: CLOUD_LOGGING_ONLY
