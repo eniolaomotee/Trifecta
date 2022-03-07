@@ -7,3 +7,4 @@ steps:
   - '-c'
   - |
     gcloud app deploy app.yaml
+  logging: CLOUD_LOGGING_ONLY
