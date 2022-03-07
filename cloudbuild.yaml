@@ -9,6 +9,6 @@ steps:
     gcloud source repos clone TERP-Frontend --project=terp-338409
     git checkout dev
     gcloud app deploy app.yaml
-timeout: "1700s"
+timeout: "1600s"
 options:
  logging: CLOUD_LOGGING_ONLY
