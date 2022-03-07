@@ -2,10 +2,10 @@ steps:
 
 - id: build
   name: 'gcr.io/cloud-builders/gcloud'
-  # entrypoint: 'bash'
+  entrypoint: 'node'
   args:
   - '-c'
   - |
-    gcloud source repos clone TERP-Frontend --project=terp-338409
+    gcloud source repos clone terp-Frontend --project=terp-338409
     git checkout master
     gcloud app deploy app.yaml
