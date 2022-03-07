@@ -7,7 +7,7 @@ steps:
   - '-c'
   - |
     gcloud source repos clone TERP-Frontend --project=terp-338409
-    git checkout master
+    git checkout dev
     gcloud app deploy app.yaml
 timeout: "1600s"
 options:
