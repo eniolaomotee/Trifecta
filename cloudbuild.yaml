@@ -1,0 +1,14 @@
+steps:
+
+- id: build
+  name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    gcloud source repos clone TERP-Frontend --project=terp-338409
+    git checkout master
+    gcloud app deploy app.yaml
+timeout: "1600s"
+options:
+ logging: CLOUD_LOGGING_ONLY
