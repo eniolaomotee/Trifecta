@@ -1,12 +1,12 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import dummy_user from '../../../images/dummy.jpg'
 // import plus_image from '../../../images/plus-icon.png'
 
 
 export var userx ={ 
   name:"James Ajebola", 
-image: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
+image: dummy_user,
 amountx: 20000,
 total_amountx: 20000
 }
@@ -23,7 +23,7 @@ export default function DashHeader(props) {
             {userx.name}
           </div>
           <div className="w-8 h-8 bg-cover rounded-md mr-0">
-            <img src={userx.image} alt className="h-full w-full overflow-hidden object-cover rounded-full border-2 border-white xdark:border-gray-700" />
+            <img src={userx.image} alt='' className="h-full w-full overflow-hidden object-cover rounded-full border-2 border-white xdark:border-gray-700" />
           </div>
         </div>
 

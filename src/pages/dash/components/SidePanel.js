@@ -1,8 +1,8 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../../../images/logo.png'
-import BuildingSvg from '../../../icons/dash-projects/SearchSvg';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import BuildingSvg from '../../../icons/dash-projects/SearchSvg';
 import BidIconSvg from '../../../icons/dash-sidepanel/BidIconSvg';
 import FolderOpenSvg from '../../../icons/dash-sidepanel/FolderOpenSvg';
 import DashHomeIcon from '../../../icons/dash-sidepanel/DashHomeIcon';
@@ -19,7 +19,7 @@ export default function SidePanel({active_selectr}) {
     
   return (
   <div className="fixed xcol-span-1 row-span-5 bg-white sidepanel z-10 shadow-lg xfixed">
-        <div className=" my-3 mb-6 w-8/12 mx-auto">
+        <div className="logo-sidepanel xmx-auto">
           {/* <div className='bg-blue-900 text-white text-center p-3'>Logo</div> */}
           <img src={Logo}/>
         </div>

@@ -28,18 +28,18 @@ export default function DashCompanies() {
   return (
 <div className='dashboardx'>
     <SidePanel active_selectr={active_selectr}/>
-    <div className='main-body bg-colr'>
+    <div className='main-body bg-white'>
       <DashHeader title='Companies'/>
 
-      <div className="px-2 pr-5 txt-dark-bluex">
-        <div className='search-buttonx xpx-2 my-2 relative grid grid-cols-12 gap-2'>
+      <div className="contentx px-2pr-5txt-dark-bluex">
+        <div className='search-buttonx xpx-2 xmy-2 relative grid grid-cols-12 gap-2'>
           <span className='absolute bottom-5 z-10 top-3 left-4 text-lg txt-darkblue3'>
             <SearchSvg classx='stroke-current w-5 h-5'/>
           </span>
           <input type="text" className="col-span-10 shadow appearance-none border rounded xw-9/12 py-2 pl-10 text-blue-700 bg-gray-100 focus:outline-none focus:shadow-outline " placeholder="Enter Comapny Name" id='project-title' name='project-title'/>
           <button className='col-span-2 bg-bluex xml-3 py-2 text-white rounded'><FontAwesomeIcon icon={['fas', 'plus']}/><span className='ml-2 text-sm'>Add New Company</span></button>
         </div>
-        <div className='bg-white table-holdr'>
+        <div className='bg-white table-holdr sub-contenty'>
           <table className="xrow-span-9 xpl-20 w-full table-auto">
             {/* <thead className='bg-blue-200 py-5'>
             </thead>

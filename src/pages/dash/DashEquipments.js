@@ -30,28 +30,28 @@ export default function DashEquipments() {
   return (
     <div className='dashboardx'>
     <SidePanel active_selectr={active_selectr}/>
-    <div className='main-body bg-colr'>
+    <div className='main-body bg-white'>
       <DashHeader title='Equipments'/>
 
-      <div className="px-2 pr-5">
+      <div className="contenty px-2 pr-5">
         <div className='search-buttonx xpx-2 my-2 relative grid grid-cols-12 gap-2'>
           <span className='absolute bottom-5 z-10 top-3 left-4 text-lg txt-darkblue3'>
             <SearchSvg classx='stroke-current w-5 h-5'/>
           </span>
           {/* <span className='absolute bottom-5 z-10 top-2 left-4 text-lg'><FontAwesomeIcon icon={["fas", "search"]} /></span> */}
           <input type="text" className="col-span-8 shadow appearance-none border rounded xw-9/12 py-2 pl-10 text-blue-700 bg-gray-100 focus:outline-none focus:shadow-outline " placeholder="Enter Comapny Name" id='project-title' name='project-title'/>
-          <button className='col-span-2 bg-blue-800 py-2 text-white text-sm'><FontAwesomeIcon icon={['fas', 'plus']}/><span className='ml-2'>Add New Equipment</span></button>
-          <button className='col-span-2 bg-white border border-blue-700 text-blue-700 py-2 text-sm'>Request Equipment</button>
+          <button className='col-span-2 button-solidx py-2 text-sm'><FontAwesomeIcon icon={['fas', 'plus']}/><span className='ml-2'>Add New Equipment</span></button>
+          <button className='col-span-2 button-inversex py-2 text-sm'>Request Equipment</button>
         </div>
         {/* <div className='row-span-1 px-3 xflex'>
           <input type="text" className="shadow appearance-none border rounded w-7/12 py-2 pl-10 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline " placeholder="Enter Project Title" id='project-title' name='project-title'/>
           <button className='w-2/12 bg-blue-800 ml-2 py-2 text-white'><FontAwesomeIcon icon={['fas', 'plus']}/><span className='ml-2'>Add New Equipment</span></button>
           <button className='w-2/12 bg-white border border-blue-700 text-blue-700 ml-2 py-2'>Request Equipment</button>
         </div> */}
-        <div className='bg-white table-holdr'>
+        <div className='bg-white table-holdr sub-contenty'>
           <table className="w-full table-auto">
               <tr className='bg-blue-200 h-14'>
-                <td className=' pl-5'>Equipment</td>
+                <td className=' pl-1'>Equipment</td>
                 <td>Description</td>
                 <td className='w-5 px-5 text-center'>Lastest Price</td>
                 <td>Stock (Quantity)</td>
@@ -62,7 +62,7 @@ export default function DashEquipments() {
 
             return(
               <tr className='hover:bg-gray-300'>
-                <td className=' pl-5'>
+                <td className=' pl-1'>
                   <span className=''>
                     {e.namex}
                   </span>
@@ -71,7 +71,7 @@ export default function DashEquipments() {
                 <td className='text-center'>{e.description}</td>
                 <td className='w-5 text-center'>{naira_sign}{e.amount}</td>
                 <td className="pl-10">{e.quantity}</td>
-                <td><span className='p-3 mr-3 text-center bg-blue-200'>{e.last_purchase}</span></td>
+                <td><span className='p-3 mr-3 text-center xbg-blue-200'>{e.last_purchase}</span></td>
                 <td><FontAwesomeIcon icon={['fas','ellipsis-v']}/></td>
               </tr>)
             })
