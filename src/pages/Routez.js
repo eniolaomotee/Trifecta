@@ -26,7 +26,7 @@ export default function Routez() {
       <Route path="/dash_equipments" element={<DashEquipments/>}/>
       <Route path="/dash_expenses" element={<DashExpenses/>}/>
       <Route path="/log_in" element={<LogIn/>}/>
-      <Route path="/sign_up" element={<SignUp/>}/>
+      <Route path="/sign_up" element={<SignUp/>}/>.
     </Routes> */}
     <Router>
       <Switch>
