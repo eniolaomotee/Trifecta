@@ -8,6 +8,7 @@ steps:
   - |
     gcloud source repos clone TERP-Frontend --project=terp-338409
     git checkout master
+    npm run build
     gcloud app deploy app.yaml
 timeout: "1600s"
 options:
