@@ -1,7 +1,7 @@
 import React from 'react';
-import SidePanel from './components/SidePanel';
-import DashHeader from './components/DashHeader';
-import {regularx, activex} from './components/SidePanel'
+import SidePanel from '../components/dash/SidePanel';
+import DashHeader from '../components/dash/DashHeader';
+import {regularx, activex} from '../components/dash/SidePanel'
 
 export default function DashExpenses() {
     var active_selectr = {

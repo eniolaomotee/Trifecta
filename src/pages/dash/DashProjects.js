@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import SidePanel from './components/SidePanel';
-import DashHeader from './components/DashHeader';
-import AddProject from '../add_new_project_form/AddProject'
+import SidePanel from '../components/dash/SidePanel';
+import DashHeader from '../components/dash/DashHeader';
+import {regularx, activex} from '../components/dash/SidePanel'
+
+import AddProject from '../components/modals/add_new_project_form/AddProject';
 // import {userx} from './components/DashHeader'
-import {regularx, activex} from './components/SidePanel'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SearchSvg from '../../icons/dash-projects/SearchSvg';
 
@@ -51,7 +52,7 @@ export default function DashProjects() {
             </span>
             {/* <span className='absolute bottom-5 z-10 top-2 left-4 text-lg'><FontAwesomeIcon icon={["fas", "search"]} /></span> */}
             <input type="text" className="col-span-10 shadow appearance-none border rounded xw-9/12 py-2 pl-10 text-blue-700 bg-gray-100 focus:outline-none focus:shadow-outline " placeholder="Enter Project Title" id='project-title' name='project-title'/>
-            <button onClick={handleShowP} className='col-span-2 bg-bluex xml-3 py-2 text-white rounded text-sm'><FontAwesomeIcon icon={['fas', 'plus']}/><span className='ml-2'>Add New Project</span></button>
+            <button onClick={handleShowP} className='col-span-2 bg-bluex xml-3 py-2 text-white rounded text-sm'><FontAwesomeIcon icon={['fas', 'plus']}/><span className='ml-2'>New Project</span></button>
           </div>
           <div className="xrow-span-9 || grid grid-cols-3 grid-rows-3 xgap-2 xgap-x-6 gap-cus-1 gap-y-cus-1">
             {projectsx.map((e)=>{

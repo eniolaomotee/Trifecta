@@ -1,10 +1,10 @@
 import React,{ useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import SidePanel from './components/SidePanel';
-import DashHeader from './components/DashHeader';
-// import {userx} from './components/DashHeader';
-import {regularx, activex} from './components/SidePanel'
-import AddBid from '../add_new_bid_form/AddBid';
+import SidePanel from '../components/dash/SidePanel';
+import DashHeader from '../components/dash/DashHeader';
+import {regularx, activex} from '../components/dash/SidePanel'
+
+import AddBid from '../components/modals/add_new_bid_form/AddBid';
 import SearchSvg from '../../icons/dash-projects/SearchSvg';
 
 export default function DashBids() {
@@ -50,7 +50,7 @@ export default function DashBids() {
             </span>
             {/* <span className='absolute bottom-5 z-10 top-2 left-4 text-lg'><FontAwesomeIcon icon={["fas", "search"]} /></span> */}
             <input type="text" className="col-span-10 shadow appearance-none border rounded xw-9/12 py-2 pl-10 text-blue-700 bg-gray-100 focus:outline-none focus:shadow-outline " placeholder="Enter Project Title" id='project-title' name='project-title'/>
-            <button onClick={handleShow} className='col-span-2 bg-bluex xml-3 py-2 text-white rounded'><FontAwesomeIcon icon={['fas', 'plus']}/><span className='ml-2 text-sm'>Add New Bid</span></button>
+            <button onClick={handleShow} className='col-span-2 bg-bluex xml-3 py-2 text-white rounded'><FontAwesomeIcon icon={['fas', 'plus']}/><span className='ml-2 text-sm'>New Bid</span></button>
           </div>
           <div className="row-span-9 || grid grid-cols-3 grid-rows-3 gap-cus-1 gap-y-cus-1">
             {bids_temp.map(e=>{

@@ -27,9 +27,9 @@
 .bg-warn{background-color: rgba(255, 172, 50, 0.1)}
 .bg-fail{background-color: rgba(245, 91, 93, 0.1)}
 
-.bg-pass{}
-.bg-warn{}
-.bg-fail{}
+.table-hd-bg{
+    background-color: rgba(19, 143, 255, 0.1);
+}
 
 
 /* text colors */
@@ -61,8 +61,13 @@
     /* border: 2px var(--blue-rep) solid; */
     background-color: var(--blue-rep);
     color: white;
+    border-radius: 5px;
+    padding: 12px, 18px, 12px, 18px;
+    /* mix-blend-mode: */
 }
-/* .active-sidepanel{} */
+.sidepanel-item:active{
+    color: var(--blue-rep)
+}
 
 /* ---colors end -----------------------------------------------------------------------*/
 body{ overflow-x: hidden; }

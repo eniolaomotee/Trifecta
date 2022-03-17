@@ -53,7 +53,7 @@ export default function OngoingProjects(props) {
             <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                     <div className="shadow overflow-hidden border-b border-gray-200 xsm:rounded-lg">
-                        <table className="min-w-full divide-y divide-gray-200">
+                        <table className="min-w-full divide-y divide-gray-200 xtable-auto">
                             <thead className="bg-colr text-sm font-medium">
                                 <tr>
                                     <th
@@ -81,13 +81,13 @@ export default function OngoingProjects(props) {
                                         Kick Off Date
                                     </th>
                                     <th scope="col" className="relative px-6 py-3 font-medium text-gray-500">
-                                        <span className="">Project Status</span>
+                                        <span className="">Payment Status</span>
                                     </th>
                                 </tr>
                             </thead>
                             <tbody className="bg-white divide-y divide-gray-200">
                                 {temp_table.map((e) => {
-                                var progress_style = {width: e.progress}
+                                // var progress_style = {width: e.progress}
                                 var status_style;
                                 if(e.payment_status === 'full payment'){status_style = 'px-2 py-1 text-xs text-center rounded xpass capitalize'}
                                 else if(e.payment_status === 'not paid'){status_style = 'px-2 py-1 text-xs text-center rounded xfail capitalize'}

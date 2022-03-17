@@ -1,17 +1,17 @@
 import React from 'react';
 // import {userx} from './components/DashHeader';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import SidePanel from './components/SidePanel';
-import DashHeader from './components/DashHeader';
-import {regularx, activex} from './components/SidePanel'
+import SidePanel from '../components/dash/SidePanel';
+import DashHeader from '../components/dash/DashHeader';
+import {regularx, activex} from '../components/dash/SidePanel'
 // import './DashHomeStyle.css'
-import HomeTableTab from './components/dash_home/HomeTableTab';
 // import FolderOpenSvg from '../../icons/dash-sidepanel/FolderOpenSvg';
 // import CalenderWidget from './components/dash_home/CalenderWidget';
-import MyTasksWidget from './components/dash_home/MyTasksWidget';
-import BarChartx from './components/dash_home/Charts/BarChartx';
-import RadarChartx from './components/dash_home/Charts/RadarChartx';
-import GroupSummary from './components/dash_home/GroupSummary';
+import HomeTableTab from '../components/dash/dash_home/HomeTableTab';
+import MyTasksWidget from '../components/dash/dash_home/MyTasksWidget';
+import BarChartx from '../components/dash/dash_home/Charts/BarChartx';
+import RadarChartx from '../components/dash/dash_home/Charts/RadarChartx';
+import GroupSummary from '../components/dash/dash_home/GroupSummary';
 
 
 export default function DashHome() {
