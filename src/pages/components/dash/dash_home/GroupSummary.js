@@ -41,7 +41,7 @@ export default function GroupSummary() {
                   10
                 </div>
                 <div className='text-sm mb-0 pb-0 small-textx'>
-                  Ongoing Bids
+                  Pending Bids
                 </div>
               </div>
             </div>

@@ -43,7 +43,7 @@ export default function Group_summary() {
                   10
                 </div>
                 <div className='text-sm text-right mb-0 pb-0'>
-                  Ongoing Bids
+                  Pending Bids
                 </div>
               </div>
             </div>
