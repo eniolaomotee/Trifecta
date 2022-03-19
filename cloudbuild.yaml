@@ -8,6 +8,7 @@ steps:
   - |
     gcloud source repos clone TERP-Frontend --project=terp-338409
     gcloud app deploy app.yaml
+    curl -X POST --data-urlencode "payload={\"channel\": \"#terp\", \"username\": \"webhookbot\", \"text\": \"Terp dev has been deployed successfully.\", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
 timeout: "1600s"
 options:
  logging: CLOUD_LOGGING_ONLY
