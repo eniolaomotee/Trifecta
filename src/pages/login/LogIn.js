@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Logo from '../../images/logo.png';
+// import LogoDark from '../../images/logo-dark.png';
 
 export default function LogIn() {
   return( 
@@ -23,7 +24,7 @@ export default function LogIn() {
                 <label className='text-sm' for="login-password">Password</label><br></br>
                 <span className='absolute z-10 py-4 pl-3'><FontAwesomeIcon icon={["fas", "shield-alt"]} /></span>
                 <input type="password" className="pl-10 appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline " placeholder="password" id='login-password' name='login-password'/>
-                <div className='w-full text-right text-blue-800'><a>Forgot Password?</a></div>
+                <div className='w-full text-right text-blue-800'><a href='#'>Forgot Password?</a></div>
             </div>
             <Link to='/dash' name="login-btn" id="login-btn" className="p-3 bg-blue-500 text-white text-center  rounded" href="#" role="submit">Log In</Link>
             {/* <Link to='/dash' name="login-btn" id="login-btn" className="p-3 bg-blue-500 text-white rounded" href="#" role="submit">Log In</Link> */}

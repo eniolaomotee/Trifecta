@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./LoginModalStyle.css";
+// import React, { useState } from 'react';
 // import { colourOptions } from './multiSelect/data';
 // import { default as ReactSelect } from "react-select";
-import ProjectMembersAvatar from './ProjectMembersAvatar';
+// import ProjectMembersAvatar from './ProjectMembersAvatar';
 // import Multiselectr from './multiSelect/MultiSelectr';
 
 export default function AddBid(props) {
@@ -23,28 +24,28 @@ export default function AddBid(props) {
 
                     <div className="col-span-2 text-left">
                         <label className='text-blue-900' htmlFor="client-name">Client</label>
-                        <input type="text"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="client-name" type="text" placeholder="Enter Client Name" name='client-name'/>
+                        <input type="text"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="client-name" placeholder="Enter Client Name" name='client-name'/>
                     </div>
                     <div className="col-span-2 text-left"> 
                         <label className='text-blue-900' htmlFor="client-department">Client Department</label>
-                        <input type="text"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="client-department" type="text" placeholder="Enter Client Department" name='client-department'/>
+                        <input type="text"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="client-department" placeholder="Enter Client Department" name='client-department'/>
                     </div>
                     <div className="col-span-2 text-left"> 
                         <label className='text-blue-900' htmlFor="contract-sum">Contract Sum</label>
-                        <input type="text"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="contract-sum" type="text" placeholder="Ten Million, Two Hundred and Seven Thousand Naira " name='contract-sum'/>
+                        <input type="text"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="contract-sum" placeholder="Ten Million, Two Hundred and Seven Thousand Naira " name='contract-sum'/>
                     </div>
                     <div className="col-span-1 text-left"> 
                         <label className='text-blue-900' htmlFor="tender-number">Tender Number</label>
-                        <input type="text"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="tender-number" type="text" placeholder="TRF/NIG/31/2021" name='tender-number'/>
+                        <input type="text"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="tender-number" placeholder="TRF/NIG/31/2021" name='tender-number'/>
                     </div>
                     <div className="col-span-1 text-left"> 
                         <label className='text-blue-900' htmlFor="date-submittd">Date Submitted</label>
-                        <input type="date"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="date-submittd" type="text" placeholder="2/3/2021" name='date-submittd'/>
+                        <input type="date"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="date-submittd" placeholder="2/3/2021" name='date-submittd'/>
                     </div>
                     {/* issue yet to be fixed */}
                     <div className="col-span-4 text-left">
                         <label className='text-blue-900' htmlFor="clent-name">Bidding Companies</label>
-                        <input type="text"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Enter Client Name"/>
+                        <input type="text"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="username" placeholder="Enter Client Name"/>
                         
                     </div>
 

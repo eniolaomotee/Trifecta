@@ -46,7 +46,7 @@ export default function AddProject(props) {
                         <input type="text" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" placeholder="TRF/NIG/31/2021" id='bid-id' name='bid-id'/>
                     </div>
                     <div className="col-span-1 text-left">
-                        <label className='text-blue-900' htmlFor="clent-name">Payment Status</label>
+                        <label className='text-blue-900' htmlFor="clent-name">Project Status</label>
                         <select type="text"className="shadow xappearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="username">
                             <option className='xpass' value="full-payment">Full Payment</option>
                             <option className='xwarn' value="half-payment">Half Payment</option>
@@ -58,7 +58,7 @@ export default function AddProject(props) {
                         <input type="date" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id='take-off-dater' name='take-off-dater'/>
                     </div>
                     <div className="col-span-1 text-left">
-                        <label className='text-blue-900' htmlFor="clent-name">Payment Status</label>
+                        <label className='text-blue-900' htmlFor="clent-name">Project Duration</label>
                         <select type="text"className="shadow xappearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="username">
                             <option className='' value="1 month">1 Month</option>
                             <option className='' value="2 Months">2 Months</option>

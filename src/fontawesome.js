@@ -8,7 +8,8 @@ import {
   faBuilding,
   faEnvelope,
   faUser,
-  faClock
+  faClock,
+  faCalendar
 } from '@fortawesome/free-regular-svg-icons';
 
 import { 
@@ -54,7 +55,8 @@ library.add(
   faSearch,
   faClock,
   faAngleLeft,
-  faAngleRight
+  faAngleRight,
+  faCalendar
 
   
   // more icons go here

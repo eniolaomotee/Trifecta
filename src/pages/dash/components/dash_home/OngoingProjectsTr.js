@@ -81,7 +81,7 @@ export default function OngoingProjects(props) {
                                         Kick Off Date
                                     </th>
                                     <th scope="col" className="relative px-6 py-3 font-medium text-gray-500">
-                                        <span className="">Payment Status</span>
+                                        <span className="">Project Status</span>
                                     </th>
                                 </tr>
                             </thead>

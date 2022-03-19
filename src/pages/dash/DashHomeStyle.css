@@ -27,9 +27,9 @@
 .bg-warn{background-color: rgba(255, 172, 50, 0.1)}
 .bg-fail{background-color: rgba(245, 91, 93, 0.1)}
 
-.bg-pass{}
-.bg-warn{}
-.bg-fail{}
+.table-hd-bg{
+    background-color: rgba(19, 143, 255, 0.1);
+}
 
 
 /* text colors */
@@ -52,7 +52,22 @@
 .xfail{color: var(--danger);background-color: rgba(245, 91, 93, 0.1)}
 
 /* border color */
-/* .active-sidepanel{} */
+.button-inversex{
+    border: 2px var(--blue-rep) solid;
+    color: var(--blue-rep);
+    background-color: white;
+}
+.button-solidx{
+    /* border: 2px var(--blue-rep) solid; */
+    background-color: var(--blue-rep);
+    color: white;
+    border-radius: 5px;
+    padding: 12px, 18px, 12px, 18px;
+    /* mix-blend-mode: */
+}
+.sidepanel-item:active{
+    color: var(--blue-rep)
+}
 
 /* ---colors end -----------------------------------------------------------------------*/
 body{ overflow-x: hidden; }
@@ -79,6 +94,12 @@ body{ overflow-x: hidden; }
 .active-panel{
     border-left: var(--blue-rep) 2px solid;
 }
+.logo-sidepanel{
+    width: 120px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
 .main-body{
     margin-left: 240px;
     width: calc(100vw - 240px)!important;
@@ -88,16 +109,49 @@ body{ overflow-x: hidden; }
     height: 4em;
 }
 .contentx{
-    padding-right: 1em;
+    padding-left: 45px;
+    padding-right: 45px;
+    color: var(--dark-blue-rep);
     /* position: absolute;
     top:4.6em; */
-
+}
+.contenty{
+    padding-left: 45px;
+    padding-right: 29px;
+    color: var(--dark-blue-rep);
+    /* position: absolute;
+    top:4.6em; */
+}
+.sub-contentx{}
+.sub-contenty{
+    margin-top: 23px;
 }
 .chartr{
     /* height: 20vh; */
     width: 100%;
 }
 .radar-chartx{height: 300px; width: 300px;}
+
+.group-summary-inner .svg{
+    width: 60px;
+    height: 60px;
+}
+.group-summary-item{
+    position: relative;
+    text-align: left;
+}
+.group-summary-item>.big-textx{
+    position: absolute;
+    left: 10px;
+    font-size: 28px;
+    font-weight: 700;
+    /* top: 10px; */
+}
+.group-summary-item>.small-textx{
+    position: absolute;
+    bottom: 0px;
+    left: 10px;
+}
 
 .ongiong-pending-tab>.active{
     border-bottom: 2px blue solid;
@@ -115,7 +169,9 @@ body{ overflow-x: hidden; }
 }
 
 
-
+/* dash projects */
+.gap-cus-1{grid-gap: 16px;}
+.gap-y-cus-1{grid-column-gap: 45px;}
 
 /* temp */
 .w-test{width: 200px !important;}

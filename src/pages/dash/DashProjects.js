@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import SidePanel from './components/SidePanel';
-import DashHeader from './components/DashHeader';
-import AddProject from '../add_new_project_form/AddProject'
-import {userx} from './components/DashHeader'
-import {regularx, activex} from './components/SidePanel'
+import SidePanel from '../components/dash/SidePanel';
+import DashHeader from '../components/dash/DashHeader';
+import {regularx, activex} from '../components/dash/SidePanel'
+
+import AddProject from '../components/modals/add_new_project_form/AddProject';
+// import {userx} from './components/DashHeader'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SearchSvg from '../../icons/dash-projects/SearchSvg';
 
@@ -45,15 +46,15 @@ export default function DashProjects() {
         <DashHeader title='Projects'/>
 
         <div className="contentx">
-          <div className='search-buttonx px-2 my-2 relative grid grid-cols-12 gap-2'>
+          <div className='search-buttonx my-6 relative grid grid-cols-12 gap-2'>
             <span className='absolute bottom-5 z-10 top-3 left-4 text-lg txt-darkblue3'>
               <SearchSvg classx='stroke-current w-5 h-5'/>
             </span>
             {/* <span className='absolute bottom-5 z-10 top-2 left-4 text-lg'><FontAwesomeIcon icon={["fas", "search"]} /></span> */}
             <input type="text" className="col-span-10 shadow appearance-none border rounded xw-9/12 py-2 pl-10 text-blue-700 bg-gray-100 focus:outline-none focus:shadow-outline " placeholder="Enter Project Title" id='project-title' name='project-title'/>
-            <button onClick={handleShowP} className='col-span-2 bg-bluex xml-3 py-2 text-white rounded text-sm'><FontAwesomeIcon icon={['fas', 'plus']}/><span className='ml-2'>Add New Project</span></button>
+            <button onClick={handleShowP} className='col-span-2 bg-bluex xml-3 py-2 text-white rounded text-sm'><FontAwesomeIcon icon={['fas', 'plus']}/><span className='ml-2'>New Project</span></button>
           </div>
-          <div className="xrow-span-9 || grid grid-cols-3 grid-rows-3 gap-2 px-2">
+          <div className="xrow-span-9 || grid grid-cols-3 grid-rows-3 xgap-2 xgap-x-6 gap-cus-1 gap-y-cus-1">
             {projectsx.map((e)=>{
               var progress_style = {
                 width: e.progress
@@ -64,9 +65,9 @@ export default function DashProjects() {
               else{status_cn = 'ml-auto capitalize bg-amber-100 text-amber-500 rounded-lg text-xs p-1 px-2'}
               return(
                 <div className=' bg-white rounded txt-darkblue2'>
-                  <div className='p-3'>
+                  <div className='p-3 pb-1'>
                     <div className='flex text-sm'><span>#{e.tag}</span><span className={status_cn}>{e.statusx}</span></div>
-                    <div className='text-center text-lg py-3 text-justifyx'>{e.name}</div>
+                    <div className='xtext-center text-lg py-2'>{e.name}</div>
                     <div className='flex txt-greyed-out text-xs'><span>client:</span><span className='ml-auto'>Payment Balance</span></div>
                     <div className='flex'><span>{e.client}</span><span className='ml-auto'>{naira_sign}{e.payment_balance}</span></div>
                     <div className='flex my-2'>

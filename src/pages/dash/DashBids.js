@@ -1,10 +1,10 @@
 import React,{ useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import SidePanel from './components/SidePanel';
-import DashHeader from './components/DashHeader';
-import {userx} from './components/DashHeader';
-import {regularx, activex} from './components/SidePanel'
-import AddBid from '../add_new_bid_form/AddBid';
+import SidePanel from '../components/dash/SidePanel';
+import DashHeader from '../components/dash/DashHeader';
+import {regularx, activex} from '../components/dash/SidePanel'
+
+import AddBid from '../components/modals/add_new_bid_form/AddBid';
 import SearchSvg from '../../icons/dash-projects/SearchSvg';
 
 export default function DashBids() {
@@ -44,15 +44,15 @@ export default function DashBids() {
         <DashHeader title='Bids'/>
 
         <div className="contentx">
-          <div className='search-buttonx px-2 my-2 relative grid grid-cols-12 gap-2'>
+          <div className='search-buttonx my-6 relative grid grid-cols-12 gap-2'>
             <span className='absolute bottom-5 z-10 top-3 left-4 text-lg txt-darkblue3'>
               <SearchSvg classx='stroke-current w-5 h-5'/>
             </span>
             {/* <span className='absolute bottom-5 z-10 top-2 left-4 text-lg'><FontAwesomeIcon icon={["fas", "search"]} /></span> */}
             <input type="text" className="col-span-10 shadow appearance-none border rounded xw-9/12 py-2 pl-10 text-blue-700 bg-gray-100 focus:outline-none focus:shadow-outline " placeholder="Enter Project Title" id='project-title' name='project-title'/>
-            <button onClick={handleShow} className='col-span-2 bg-bluex xml-3 py-2 text-white rounded'><FontAwesomeIcon icon={['fas', 'plus']}/><span className='ml-2 text-sm'>Add New Bid</span></button>
+            <button onClick={handleShow} className='col-span-2 bg-bluex xml-3 py-2 text-white rounded'><FontAwesomeIcon icon={['fas', 'plus']}/><span className='ml-2 text-sm'>New Bid</span></button>
           </div>
-          <div className="row-span-9 || grid grid-cols-3 grid-rows-3 gap-2 px-2">
+          <div className="row-span-9 || grid grid-cols-3 grid-rows-3 gap-cus-1 gap-y-cus-1">
             {bids_temp.map(e=>{
               var status_cn;
               if(e.statusx === 'approved'){status_cn = 'ml-auto capitalize bg-green-100 text-green-500 rounded-lg text-xs p-1 px-2'}
@@ -62,9 +62,9 @@ export default function DashBids() {
               return(
                 <div className=' bg-white rounded txt-darkblue2'>
                   <div className='p-3'>
-                    <div className='flex'><span>{e.TRF}</span><span className={status_cn}>{e.statusx}</span></div>
-                    <div className=' text-lg py-3 text-justifyx'>{e.name}</div>
-                    <div className='flex txt-greyed-out'><span>client:</span><span className='ml-auto'>Winning Company:</span></div>
+                    <div className='flex text-xs'><span>{e.TRF}</span><span className={status_cn}>{e.statusx}</span></div>
+                    <div className=' xtext-lg py-2 text-justifyx'>{e.name}</div>
+                    <div className='flex txt-greyed-out'><span>Client:</span><span className='ml-auto'>Winning Company:</span></div>
                     <div className='flex'><span>{e.client}</span><span className='ml-auto'>{e.winning_company}</span></div>
                   </div>
                   <div className='w-full bborder border-t-2 flex px-2'>
