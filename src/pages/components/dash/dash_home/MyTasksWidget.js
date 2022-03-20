@@ -25,7 +25,7 @@ export default function MyTasksWidget() {
             
             return(
             <div key = {e.id} className='bg-white rounded mb-2 font-face-gm'>
-                <div className='p-2 border-b border-blue-900'>
+                <div className='p-2 border-b border-blue-200'>
                     <div className='font-bold capitalize'>{e.task_name}</div>
                     <div className='txt-greyed-out capitalize text-xs'>{e.project_name}</div>
                 </div>

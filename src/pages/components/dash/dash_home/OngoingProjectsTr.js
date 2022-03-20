@@ -3,12 +3,12 @@ import React from 'react'
 export default function OngoingProjects(props) {
     var naira_sign = '\u20a6';    
     var temp_table = [
-        {namex: 'Bids', client: 'Acme International', progress: '45%', amount: 34000, payment_status: 'half payment', start_date: '28 Feb 2021'},
-        {namex: 'Bids', client: 'Acme International', progress: '45%', amount: 34000, payment_status: 'full payment', start_date: '28 Feb 2021'},
-        {namex: 'Bids', client: 'Acme International', progress: '45%', amount: 34000, payment_status: 'half payment', start_date: '28 Feb 2021'},
-        {namex: 'Bids', client: 'Acme International', progress: '45%', amount: 34000, payment_status: 'half payment', start_date: '28 Feb 2021'},
-        {namex: 'Bids', client: 'Acme International', progress: '45%', amount: 34000, payment_status: 'not paid', start_date: '28 Feb 2021'},
-        {namex: 'Bids', client: 'Acme International', progress: '45%', amount: 34000, payment_status: 'half payment', start_date: '28 Feb 2021'},
+        {namex: 'Bids', client: 'Acme International', progress: '45%', amount: 34000, project_status: 'In Progress', start_date: '28 Feb 2021'},
+        {namex: 'Bids', client: 'Acme International', progress: '45%', amount: 34000, project_status: 'Completed', start_date: '28 Feb 2021'},
+        {namex: 'Bids', client: 'Acme International', progress: '45%', amount: 34000, project_status: 'In Progress', start_date: '28 Feb 2021'},
+        {namex: 'Bids', client: 'Acme International', progress: '45%', amount: 34000, project_status: 'In Progress', start_date: '28 Feb 2021'},
+        {namex: 'Bids', client: 'Acme International', progress: '45%', amount: 34000, project_status: 'Completed', start_date: '28 Feb 2021'},
+        {namex: 'Bids', client: 'Acme International', progress: '45%', amount: 34000, project_status: 'In Compeleted', start_date: '28 Feb 2021'},
       ]    
   return (
     <div className={props.showr}>
@@ -81,7 +81,7 @@ export default function OngoingProjects(props) {
                                         Kick Off Date
                                     </th>
                                     <th scope="col" className="relative px-6 py-3 font-medium text-gray-500">
-                                        <span className="">Payment Status</span>
+                                        <span className="">Project Status</span>
                                     </th>
                                 </tr>
                             </thead>
@@ -89,8 +89,8 @@ export default function OngoingProjects(props) {
                                 {temp_table.map((e) => {
                                 // var progress_style = {width: e.progress}
                                 var status_style;
-                                if(e.payment_status === 'full payment'){status_style = 'px-2 py-1 text-xs text-center rounded xpass capitalize'}
-                                else if(e.payment_status === 'not paid'){status_style = 'px-2 py-1 text-xs text-center rounded xfail capitalize'}
+                                if(e.project_status === 'Completed'){status_style = 'px-2 py-1 text-xs text-center rounded xpass capitalize'}
+                                else if(e.payment_status === 'In Progress'){status_style = 'px-2 py-1 text-xs text-center rounded xfail capitalize'}
                                 else{status_style = 'px-2 py-1 text-xs text-center rounded xwarn capitalize'}
                                 return (
                                 <tr key={e.namex}>
@@ -106,7 +106,7 @@ export default function OngoingProjects(props) {
                                     <td className="px-6 py-4 whitespace-nowrap">
                                         {e.start_date}
                                     </td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm"><div className={status_style}>{e.payment_status}</div></td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm"><div className={status_style}>{e.project_status}</div></td>
                                 </tr>
                                 )})}
                             </tbody>

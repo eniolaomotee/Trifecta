@@ -68,7 +68,7 @@ export default function DashProjects() {
                   <div className='p-3 pb-1'>
                     <div className='flex text-sm'><span>#{e.tag}</span><span className={status_cn}>{e.statusx}</span></div>
                     <div className='xtext-center text-lg py-2'>{e.name}</div>
-                    <div className='flex txt-greyed-out text-xs'><span>client:</span><span className='ml-auto'>Payment Balance</span></div>
+                    <div className='flex txt-greyed-out text-xs'><span>client:</span><span className='ml-auto'>Contract Sum</span></div>
                     <div className='flex'><span>{e.client}</span><span className='ml-auto'>{naira_sign}{e.payment_balance}</span></div>
                     <div className='flex my-2'>
                       <div className='h-1 w-full bg-gray-300 mt-3'>
