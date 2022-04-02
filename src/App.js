@@ -1,6 +1,6 @@
-import Routez from './Routez';
-import './Admin/pages/dash/DashHomeStyle.css';
-import './Others/pages/dash/DashHomeStyle.css';
+import Routez from './Admin/pages/Routez';
+import './assets/css-styles/DashHomeStyle.css'
+import './assets/css-styles/ModalStyle.css'
 
 function App() {
   return (

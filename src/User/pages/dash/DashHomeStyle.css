@@ -1,0 +1,188 @@
+/* *{
+        font-family: "Mulish"; 
+} */
+/* colors------------------------------------------------------------------------------- */
+:root{
+    --grey-rep:#86A2B9;
+    --blue-rep:#138FFF;
+    --dark-blue-rep: #152C5B;
+    --success: #4BDE97;
+    --warning: #FFB648;
+    --danger: #F55B5D;
+    --light-purplex: rgba(95, 46, 234, 0.1);
+    --purplex: #5F2EEA;
+    --greyscale-black: #252733;
+    --darkblue1: #344E6C;
+    --darkblue2: #152C5B;
+    --darkblue-less-emphasis: #8F9CB6;
+    --darkblue-less-emphasis2: #7D9EB5;
+}
+/* background colors */
+.bg-colr{background-color: #E5E5E5;}
+.bg-dark-bluex{background-color: var(--dark-blue-rep);}
+.bg-bluex{background-color: var(--blue-rep);}
+.bg-purplex{background-color: var(--light-purplex);}
+
+.bg-pass{background-color: rgba(75, 222, 151, 0.1)}
+.bg-warn{background-color: rgba(255, 172, 50, 0.1)}
+.bg-fail{background-color: rgba(245, 91, 93, 0.1)}
+
+.table-hd-bg{
+    background-color: rgba(19, 143, 255, 0.1);
+}
+
+
+/* text colors */
+.txt-dark-bluex{color: var(--dark-blue-rep);}
+.txt-bluex{color: var(--blue-rep);}
+.txt-greyx{color: var(--grey-rep);}
+.txt-purplex{color: var(--purplex);}
+.txt-headr{color: var(--greyscale-black);}
+.txt-darkblue2{color: var(--darkblue1);}
+.txt-darkblue3{color: var(--darkblue2);}
+.txt-greyed-out{color: var(--darkblue-less-emphasis);}
+
+.txt-pass{color: var(--success);}
+.txt-warn{color: var(--warning);}
+.txt-fail{color: var(--danger);}
+
+
+.xpass{color: var(--success);background-color: rgba(75, 222, 151, 0.1)}
+.xwarn{color: var(--warning);background-color: rgba(255, 172, 50, 0.1)}
+.xfail{color: var(--danger);background-color: rgba(245, 91, 93, 0.1)}
+
+/* border color */
+.button-inversex{
+    border: 2px var(--blue-rep) solid;
+    color: var(--blue-rep);
+    background-color: white;
+}
+.button-solidx{
+    /* border: 2px var(--blue-rep) solid; */
+    background-color: var(--blue-rep);
+    color: white;
+    border-radius: 5px;
+    padding: 12px, 18px, 12px, 18px;
+    /* mix-blend-mode: */
+}
+.sidepanel-item:active{
+    color: var(--blue-rep)
+}
+
+/* ---colors end -----------------------------------------------------------------------*/
+body{ overflow-x: hidden; }
+.dashboardx{
+    width: 100vw;
+    min-height: 100vh;
+    /* overflow: hidden; */
+}
+.grid-rows-10 {
+    grid-template-rows: repeat(10, minmax(0, 1fr));
+}
+.row-span-9 {
+    grid-row: span 9 / span 9;
+}
+
+.col-span-4x {
+    grid-column: 2 / span 4;
+}
+
+.sidepanel{
+    height: 100vh;
+    width: 240px;
+}
+.active-panel{
+    border-left: var(--blue-rep) 2px solid;
+}
+.logo-sidepanel{
+    width: 120px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.main-body{
+    margin-left: 240px;
+    width: calc(100vw - 240px)!important;
+    min-height:100vh;
+    color: var(--dark-blue-rep);
+}
+.headr{
+    height: 4em;
+}
+.contentx{
+    padding-left: 45px;
+    padding-right: 45px;
+    color: var(--dark-blue-rep);
+    /* position: absolute;
+    top:4.6em; */
+}
+.contenty{
+    padding-left: 45px;
+    padding-right: 29px;
+    color: var(--dark-blue-rep);
+    /* position: absolute;
+    top:4.6em; */
+}
+.sub-contentx{}
+.sub-contenty{
+    margin-top: 23px;
+}
+.chartr{
+    /* height: 20vh; */
+    width: 100%;
+}
+.radar-chartx{height: 300px; width: 300px;}
+
+.group-summary-inner .svg{
+    width: 60px;
+    height: 60px;
+}
+.group-summary-item{
+    position: relative;
+    text-align: left;
+}
+.group-summary-item>.big-textx{
+    position: absolute;
+    left: 10px;
+    font-size: 28px;
+    font-weight: 700;
+    /* top: 10px; */
+}
+.group-summary-item>.small-textx{
+    position: absolute;
+    bottom: 0px;
+    left: 10px;
+}
+
+.ongiong-pending-tab>.active{
+    border-bottom: 2px blue solid;
+    /* box-sizing: border-box; */
+}
+.table-holdr{
+        min-height: 100vh;
+    }
+
+
+@media (min-width: 768px) {
+    .md\:col-span-6x {
+        grid-column: 2 / span 6;
+    }
+}
+
+
+/* dash projects */
+.gap-cus-1{grid-gap: 16px;}
+.gap-y-cus-1{grid-column-gap: 45px;}
+
+
+
+
+
+/* details pages */
+.details-desc{
+    color: #152C5BCC;
+}
+
+
+/* temp */
+.w-test{width: 200px !important;}

@@ -18,5 +18,5 @@ code {
 
 @font-face {
   font-family: "Mulish";
-  src: local("Mulish"), url("./fonts/Mulish/static/Mulish-Regular.ttf") format("truetype");
+  src: local("Mulish"), url("./assets/fonts/Mulish/static/Mulish-Regular.ttf") format("truetype");
 }

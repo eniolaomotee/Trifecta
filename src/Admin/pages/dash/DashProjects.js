@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import SidePanel from '../components/dash/SidePanel';
-import DashHeader from '../components/dash/DashHeader';
-import {regularx, activex} from '../components/dash/SidePanel'
+import SidePanel from '../../components/dash/SidePanel';
+import DashHeader from '../../components/dash/DashHeader';
+import {regularx, activex} from '../../components/dash/SidePanel'
 
-import AddProject from '../components/modals/add_new_project_form/AddProject';
+import AddProject from '../../components/modals/Add/AddProject';
 // import {userx} from './components/DashHeader'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import SearchSvg from '../../../icons/dash-projects/SearchSvg';
+import SearchSvg from '../../../assets/icons/dash-projects/SearchSvg';
+import ProjectDetails from '../../components/view-details/ProjectDetails';
 
 export default function DashProjects() {
     var active_selectr = {
@@ -22,27 +23,37 @@ export default function DashProjects() {
     }
     var naira_sign = '\u20a6';    
     
-     const [showP, setShowP] = useState("hidden");
-    const handleShowP = () => {
-        if(showP === "hidden"){ setShowP("") }
-        else{setShowP("hidden")}
+    const [show, setShow] = useState("hidden");
+    const [showTile, setShowTile] = useState("");
+    const [showDetails, setShowDetails] = useState("hidden");
+    
+    const handleShow = () => {
+      if(show === "hidden"){ setShow("") }
+      else{setShow("hidden")}
     }
+    const handleShowDetails = () => {
+        if(showDetails === "hidden"){ setShowDetails(""); setShowTile("hidden") }
+        else{setShowDetails("hidden"); setShowTile("")}
+    }
+
+
     var projectsx = [
-      { name: 'Apo Legislative Quarters Reconstruction', tag: 'construction', client: 'Ministry of Housing', statusx: 'completed', payment_balance: 20000, wallet_amount: 300000, progress: '90%'},
-      { name: 'Apo Legislative Quarters Reconstruction', tag: 'construction', client: 'Ministry of Housing', statusx: 'active', payment_balance: 20000, wallet_amount: 300000, progress: '40%'},
-      { name: 'Apo Legislative Quarters Reconstruction', tag: 'construction', client: 'Ministry of Education', statusx: 'not started', payment_balance: 20000, wallet_amount: 300000, progress: '45%'},
-      { name: 'Apo Legislative Quarters Reconstruction', tag: 'construction', client: 'Ministry of Housing', statusx: 'completed', payment_balance: 20000, wallet_amount: 300000, progress: '68%'},
-      { name: 'Apo Legislative Quarters Reconstruction', tag: 'construction', client: 'Ministry of Housing', statusx: 'completed', payment_balance: 20000, wallet_amount: 300000, progress: '50%'},
-      { name: 'Apo Legislative Quarters Reconstruction', tag: 'construction', client: 'Ministry of Housing', statusx: 'not started', payment_balance: 20000, wallet_amount: 300000, progress: '80%'},
-      { name: 'Apo Legislative Quarters Reconstruction', tag: 'renovation', client: 'Ministry of Housing', statusx: 'completed', payment_balance: 20000, wallet_amount: 300000, progress: '20%'}
+      { id:1, name: 'Apo Legislative Quarters Reconstruction', tag: 'construction', client: 'Ministry of Housing', statusx: 'completed', payment_balance: 20000, wallet_amount: 300000, progress: '90%'},
+      { id:2, name: 'Apo Legislative Quarters Reconstruction', tag: 'construction', client: 'Ministry of Housing', statusx: 'active', payment_balance: 20000, wallet_amount: 300000, progress: '40%'},
+      { id:3, name: 'Apo Legislative Quarters Reconstruction', tag: 'construction', client: 'Ministry of Education', statusx: 'not started', payment_balance: 20000, wallet_amount: 300000, progress: '45%'},
+      { id:4, name: 'Apo Legislative Quarters Reconstruction', tag: 'construction', client: 'Ministry of Housing', statusx: 'completed', payment_balance: 20000, wallet_amount: 300000, progress: '68%'},
+      { id:5, name: 'Apo Legislative Quarters Reconstruction', tag: 'construction', client: 'Ministry of Housing', statusx: 'completed', payment_balance: 20000, wallet_amount: 300000, progress: '50%'},
+      { id:6, name: 'Apo Legislative Quarters Reconstruction', tag: 'construction', client: 'Ministry of Housing', statusx: 'not started', payment_balance: 20000, wallet_amount: 300000, progress: '80%'},
+      { id:7, name: 'Apo Legislative Quarters Reconstruction', tag: 'renovation', client: 'Ministry of Housing', statusx: 'completed', payment_balance: 20000, wallet_amount: 300000, progress: '20%'}
     ]
     // const [Projectslisst]
   return (
   <div>
-    <AddProject show={showP} handleShowP={handleShowP}/>
+    <AddProject show={show} handleShow={handleShow}/>
     <div className='dashboardx grid grid-cols-7'>
       <SidePanel active_selectr={active_selectr}/>
-      <div className='main-body col-span-7 row-span-5 bg-colr || xgrid xgrid-rows-10 gap-2'>
+      <ProjectDetails  name={projectsx[0].name} show={showDetails} handleShow={handleShowDetails}/>
+      <div className={`main-body bg-colr ${showTile}`}>
         <DashHeader title='Projects'/>
 
         <div className="contentx">
@@ -52,7 +63,7 @@ export default function DashProjects() {
             </span>
             {/* <span className='absolute bottom-5 z-10 top-2 left-4 text-lg'><FontAwesomeIcon icon={["fas", "search"]} /></span> */}
             <input type="text" className="col-span-10 shadow appearance-none border rounded xw-9/12 py-2 pl-10 text-blue-700 bg-gray-100 focus:outline-none focus:shadow-outline " placeholder="Enter Project Title" id='project-title' name='project-title'/>
-            <button onClick={handleShowP} className='col-span-2 bg-bluex xml-3 py-2 text-white rounded text-sm'><FontAwesomeIcon icon={['fas', 'plus']}/><span className='ml-2'>New Project</span></button>
+            <button onClick={handleShow} className='col-span-2 bg-bluex xml-3 py-2 text-white rounded text-sm'><FontAwesomeIcon icon={['fas', 'plus']}/><span className='ml-2'>New Project</span></button>
           </div>
           <div className="xrow-span-9 || grid grid-cols-3 grid-rows-3 xgap-2 xgap-x-6 gap-cus-1 gap-y-cus-1">
             {projectsx.map((e)=>{
@@ -64,7 +75,7 @@ export default function DashProjects() {
               else if(e.statusx === 'not started'){status_cn = 'ml-auto capitalize bg-red-100 text-red-500 rounded-lg text-xs p-1 px-2'}
               else{status_cn = 'ml-auto capitalize bg-amber-100 text-amber-500 rounded-lg text-xs p-1 px-2'}
               return(
-                <div className=' bg-white rounded txt-darkblue2' key={e.name}>
+                <div className=' bg-white rounded txt-darkblue2' key={e.id}>
                   <div className='p-3 pb-1'>
                     <div className='flex text-sm'><span>#{e.tag}</span><span className={status_cn}>{e.statusx}</span></div>
                     <div className='xtext-center text-lg py-2'>{e.name}</div>
@@ -80,7 +91,7 @@ export default function DashProjects() {
                   </div>
                   <div className='w-full bborder border-t-2 flex px-2'>
                     {/* <div className='py-2 text-2xl'><FontAwesomeIcon icon={['fas', 'wallet']}/><span className='pl-2 text-lg align-middle'>{naira_sign}{userx.total_amountx}</span></div> */}
-                    <button className='bg-bluex text-white p-1 rounded my-2 ml-auto'>View Details</button>
+                    <button className='bg-bluex text-white p-1 rounded my-2 ml-auto' onClick={handleShowDetails}>View Details</button>
                   </div>
                 </div>
               );

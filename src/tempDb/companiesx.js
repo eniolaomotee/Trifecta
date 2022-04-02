@@ -1,4 +1,4 @@
-export default [
+const companiesx = [
     {
         company_name: 'Company', 
         rc: '643478', 
@@ -9,7 +9,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643479', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -17,7 +17,7 @@ export default [
     },
     {
         company_name: 'Company',
-        rc: '643478', 
+        rc: '643480', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -25,7 +25,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643481', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -33,7 +33,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643482', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -41,7 +41,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643483', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -49,7 +49,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643404', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -57,7 +57,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '6434701', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -65,7 +65,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643405', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -73,7 +73,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643406', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -81,7 +81,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643407', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -89,7 +89,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643408', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -97,7 +97,7 @@ export default [
     },
     {
         company_name: 'Company',
-        rc: '643478', 
+        rc: '643411', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -105,7 +105,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643412', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -113,7 +113,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643433', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -121,7 +121,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643413', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -129,7 +129,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643414', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -137,7 +137,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643415', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -145,7 +145,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643417', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -153,7 +153,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643418', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -161,7 +161,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643419', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -169,7 +169,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643420', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -177,7 +177,7 @@ export default [
     },
     {
         company_name: 'Company',
-        rc: '643478', 
+        rc: '643431', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -185,7 +185,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643442', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -193,7 +193,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643443', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -201,7 +201,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643444', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -209,7 +209,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643445', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -217,7 +217,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643446', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -225,7 +225,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643474', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -233,7 +233,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643449', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -241,7 +241,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643460', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -249,7 +249,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643461', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -257,7 +257,7 @@ export default [
     },
     {
         company_name: 'Company',
-        rc: '643478', 
+        rc: '643462', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -265,7 +265,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643463', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -273,7 +273,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643467', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -281,7 +281,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643468', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -289,7 +289,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643491', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -297,7 +297,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '6434928', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -305,7 +305,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643493', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -313,7 +313,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643494', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -321,7 +321,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643495', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -329,7 +329,7 @@ export default [
     },
     {
         company_name: 'Company', 
-        rc: '643478', 
+        rc: '643496', 
         email: 'email@gmail.com', 
         address: '54 West Virginia rd', 
         contact: '+030545848', 
@@ -337,3 +337,4 @@ export default [
     },
     
   ];
+  export default companiesx
