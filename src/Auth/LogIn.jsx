@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Logo from '../../../assets/images/logo.png';
+import Logo from '../assets/images/logo.png';
 // import LogoDark from '../../images/logo-dark.png';
 
 export default function LogIn() {

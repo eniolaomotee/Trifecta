@@ -2,16 +2,16 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import { BrowserRouter as Router, Switch, Route, Link, Routes } from "react-router-dom";
 
-import DashHome from './dash/DashHome';
-import DashProjects from './dash/DashProjects';
-import DashBids from './dash/DashBids';
-import DashCompanies from './dash/DashCompanies';
-import DashTasks from './dash/DashTasks';
-import DashEquipments from './dash/DashEquipments';
-import DashExpenses from './dash/DashExpenses';
-import LogIn from './login/LogIn';
-import SignUp from './login/SignUp';
-import './dash/DashHomeStyle.css'
+import DashHome from '../User/pages/dash/DashHome';
+import DashProjects from '../User/pages/dash/DashProjects';
+import DashBids from '../User/pages/dash/DashBids';
+import DashCompanies from '../User/pages/dash/DashCompanies';
+import DashTasks from '../User/pages/dash/DashTasks';
+import DashEquipments from '../User/pages/dash/DashEquipments';
+import DashExpenses from '../User/pages/dash/DashExpenses';
+import LogIn from '../Auth/LogIn';
+import SignUp from '../Auth/SignUp';
+import '../User/pages/dash/DashHomeStyle.css'
 
 export default function Routez() {
   return( 

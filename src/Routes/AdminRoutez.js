@@ -2,18 +2,18 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import { BrowserRouter as Router, Switch, Route, Link, Routes } from "react-router-dom";
 
-import DashHome from './dash/DashHome';
-import DashProjects from './dash/DashProjects';
-import DashBids from './dash/DashBids';
-import DashCompanies from './dash/DashCompanies';
-import DashTasks from './dash/DashTasks';
-import DashEquipments from './dash/DashEquipments';
-import DashExpenses from './dash/DashExpenses';
-import LogIn from './login/LogIn';
-import SignUp from './login/SignUp';
-import '../../assets/css-styles/DashHomeStyle.css'
-import '../../assets/css-styles/ModalStyle.css'
-import DashMeetings from './dash/DashMeetings';
+import DashHome from '../Admin/pages/dash/DashHome';
+import DashProjects from '../Admin/pages/dash/DashProjects';
+import DashBids from '../Admin/pages/dash/DashBids';
+import DashCompanies from '../Admin/pages/dash/DashCompanies';
+import DashTasks from '../Admin/pages/dash/DashTasks';
+import DashEquipments from '../Admin/pages/dash/DashEquipments';
+import DashExpenses from '../Admin/pages/dash/DashExpenses';
+import LogIn from '../Auth/LogIn'
+import SignUp from '../Auth/SignUp';
+import '../assets/css-styles/DashHomeStyle.css'
+import '../assets/css-styles/ModalStyle.css'
+import DashMeetings from '../Admin/pages/dash/DashMeetings';
 
 export default function Routez() {
   return( 
