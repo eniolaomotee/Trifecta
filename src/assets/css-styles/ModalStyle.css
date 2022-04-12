@@ -5,6 +5,7 @@
     top: 0;
     left: 0;
     z-index:20;
+    color: var(--dark-blue-rep);
 
     /* if you want to control the z-inex, blur won't work */
     /* background-color: rgba(0, 0, 0, 0.459); */
@@ -55,9 +56,38 @@
     transform:translateX(60px);
     color: var(--dark-blue-rep);
 }
+.modal-inner-edit-x2{
+    background-color: white;
+    border-radius: 10px;
+    margin: 100px auto;
+    width: calc(80% - 240px);
+    transform:translateX(60px);
+    color: var(--dark-blue-rep);
+}
+.modal-inner-edit-x3{
+    background-color: white;
+    border-radius: 10px;
+    margin: 100px auto;
+    width: calc(80% - 240px);
+    min-height: 90%;
+    transform:translateX(60px);
+    color: var(--dark-blue-rep);
+}
 .modal-edit-head{
     background-color: var(--dark-blue-rep);
     padding: 32px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.modal-edit-head-v2{
+    background-color: var(--dark-blue-rep);
+    padding: 2px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.modal-mail-head{
+    background-color: var(--dark-blue-rep);
+    padding: 6px;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
 }

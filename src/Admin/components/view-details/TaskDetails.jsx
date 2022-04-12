@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import DashHeaderDetails from './DashHeaderDetails';
-import EditBids from '../modals/EditDetails/EditBids'
+import EditIcon from '../../../assets/icons/Details/EditIcon';
+import EditTask from '../modals/EditDetails/EditTask';
 // import generic_logo from '../../../assets/images/generic-company-logo.png'
 // import DashHeader from '../dash/DashHeader';
 
@@ -15,11 +16,11 @@ export default function TaskDetails(props) {
 
     return(
         <>
-            <EditBids  show={showEdit} handleShow={handleShowEdit}/>
-            <div className={`main-body bg-white ${props.show}`}>
+            <EditTask  show={showEdit} handleShow={handleShowEdit}/>
+            <div className={`details-main-body bg-white ${props.show}`}>
                 <DashHeaderDetails title={props.name} handleShow={props.handleShow}/>
             
-                <div className='bg-white w-full'>
+                <div className='bg-white w-full pr-5'>
                     <div className='bg-white shadow flex'>
                         <span className='my-2 flex-auto mx-4'>
                             <div className='txt-greyed-out'>Initiated By</div>
@@ -38,8 +39,8 @@ export default function TaskDetails(props) {
                             <div className='font-bold'>22 April 2022</div>
                         </span>
                         <div className=''>
-                            <button className='border-2 px-2 py-1 rounded' onClick={handleShowEdit}>
-                                Edit Details
+                            <button className='border-2 border- px-2 py-1 rounded inline-block mt-2' onClick={handleShowEdit}>
+                                <EditIcon classx='fill-current inline'/> Edit Details
                             </button>
                         </div>
                     </div>

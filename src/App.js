@@ -1,6 +1,7 @@
 import Routez from './Admin/pages/Routez';
 import './assets/css-styles/DashHomeStyle.css'
 import './assets/css-styles/ModalStyle.css'
+import './assets/css-styles/responsiveness.css'
 
 function App() {
   return (

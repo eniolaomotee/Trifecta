@@ -1,4 +1,4 @@
-export default [
+const task = [
     {
         task_name: 'Set up Monitoring and Controlling processes', 
         project: 'Apo Legislative Quarters Construction', 
@@ -297,3 +297,4 @@ export default [
     },
     
   ]
+  export default task 

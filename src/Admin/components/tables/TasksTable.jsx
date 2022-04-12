@@ -47,7 +47,7 @@ const TasksTable = ({ data, rowsPerPage, handleShow }) => {
                                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">{e.assigned_to}</td>
                                                 <td className="px-3 py-4 whitespace-nowrap text-center">{e.due_date}</td>
                                                 <td className="px-6 py-4 whitespace-nowrap text-sm"><div>{e.statux}</div></td>
-                                                <td><button onClick={handleShow} className="text-xs p-2 xpass">edit</button> </td>
+                                                <td><button onClick={handleShow} className="text-xs p-2 xpass">view</button> </td>
                                             </tr>
                                         ))}
                                     </tbody>

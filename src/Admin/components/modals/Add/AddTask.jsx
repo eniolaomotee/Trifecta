@@ -50,7 +50,7 @@ export default function AddTask(props) {
                             onSearch={function noRefCheck(){}}
                             onSelect={function noRefCheck(){}}
                             options={people_x}
-                            className='shadow xappearance-none border rounded w-full py-2 px-3 text-blue-700 xbg-gray-200 mt-2 focus:outline-none focus:shadow-outline'
+                            className='rounded w-full py-2 mt-2 '
                         />
                     </div>
 
@@ -66,12 +66,12 @@ export default function AddTask(props) {
                         <div className="col-span-3 text-left">
                             {/* issue ---should include time also */}
                             <label htmlFor="date-created">Date Created</label>
-                            <input type="date-time"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-200 mt-2 focus:outline-none focus:shadow-outline" id="date-created" name='date-created'/>
+                            <input type="date"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-200 mt-2 focus:outline-none focus:shadow-outline" id="date-created" name='date-created'/>
                         </div>
                         <div className="col-span-3 text-left">
                             {/* issue ---should include time also */}
                             <label htmlFor="due-date">Due Date</label>
-                            <input type="date-time"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-200 mt-2 focus:outline-none focus:shadow-outline" id="due-date" name='due-date'/>
+                            <input type="date"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-200 mt-2 focus:outline-none focus:shadow-outline" id="due-date" name='due-date'/>
                         </div>
                         
                        

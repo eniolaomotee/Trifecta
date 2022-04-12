@@ -13,22 +13,11 @@ import LogIn from './login/LogIn';
 import SignUp from './login/SignUp';
 import '../../assets/css-styles/DashHomeStyle.css'
 import '../../assets/css-styles/ModalStyle.css'
+import DashMeetings from './dash/DashMeetings';
 
 export default function Routez() {
   return( 
   <div>
-    {/* <Routes>
-      <Route exact path="/" element={<LoginModal/>}/>
-      <Route path="/dash" element={<DashHome/>}/>
-      <Route path="/dash_projects" element={<DashProjects/>}/>
-      <Route path="/dash_bids" element={<DashBids/>}/>
-      <Route path="/dash_companies" element={<DashCompanies/>}/>
-      <Route path="/dash_tasks" element={<DashTasks/>}/>
-      <Route path="/dash_equipments" element={<DashEquipments/>}/>
-      <Route path="/dash_expenses" element={<DashExpenses/>}/>
-      <Route path="/log_in" element={<LogIn/>}/>
-      <Route path="/sign_up" element={<SignUp/>}/>
-    </Routes> */}
     <Router>
       <Switch>
         <Route exact path="/">
@@ -54,6 +43,9 @@ export default function Routez() {
         </Route>
         <Route path="/dash_equipments">
           <DashEquipments/>
+        </Route>
+        <Route path="/dash_meetings">
+          <DashMeetings/>
         </Route>
         <Route path="/dash_expenses">
           <DashExpenses/>

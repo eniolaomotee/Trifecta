@@ -1,12 +1,9 @@
 import React from 'react';
 import approvedBanks from '../../../../tempDb/approvedBanks';
+import CustomFileUpload from '../../dash/CustomFileUpload';
 
 export default function AddCompanies(props) {
 
-    // var naira_sign = '\u20a6'; z
-    // var progress_style = {
-    //     width: "90%"
-    //   }
   return( 
     <div className={props.show}>
         <div className="xback-board txt-dark-bluex">
@@ -47,13 +44,13 @@ export default function AddCompanies(props) {
                         </div>
                         <div className="col-span-2 text-left">
                             <label className='text-blue-900' htmlFor="account-number">Account Number</label>
-                            <input type="number"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="account-number" placeholder="Olivia Pope and Associates" name='account-number'/>
+                            <input type="text" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="account-number" placeholder="0452334316" name='account-number'/>
                         </div>
                         
                         <div className="col-span-2 text-left">
                             <label className='text-blue-900' htmlFor="bank-name">Bank Name</label>
                             <select type="text"className="shadow xappearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="bank-name" name='bank-name'>
-                                {approvedBanks.map(e=>{return <option className='' value={e.name}>{e.name}</option>})}
+                                {approvedBanks.map(e=>{return <option key={e.id} className='' value={e.name}>{e.name}</option>})}
                             </select>
                         </div>
                         <div className="col-span12 text-left">
@@ -66,39 +63,48 @@ export default function AddCompanies(props) {
                         <div className='grid grid-cols-4 gap-4'>
                             <div className='col-span-2 md:col-span-1'>
                                 <label>TCC:</label>
-                                <input type="file" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id='tcc-file' name='tcc-file'/>
+                                <CustomFileUpload input_id="tcc-file"/>
+                                {/* <input type="file" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id='tcc-file' name='tcc-file'/> */}
                             </div>
                             <div className='col-span-2 md:col-span-1'>
                                 <label>ITF:</label>
-                                <input type="file" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id='itf-file' name='itf-file'/>
+                                <CustomFileUpload input_id="itf-file"/>
+                                {/* <input type="file" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id='itf-file' name='itf-file'/> */}
                             </div>
                             <div className='col-span-2 md:col-span-1'>
                                 <label>NSITF:</label>
-                                <input type="file" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id='msitf-file' name='msitf-file'/>
+                                <CustomFileUpload input_id="msitf-file"/>
+                                {/* <input type="file" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id='msitf-file' name='msitf-file'/> */}
                             </div>
                             <div className='col-span-2 md:col-span-1'>
                                 <label>BPP:</label>
-                                <input type="file" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id='bpp-file' name='bpp-file'/>
+                                <CustomFileUpload input_id="bpp-file"/>
+                                {/* <input type="file" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id='bpp-file' name='bpp-file'/> */}
                             </div>
                             <div className='col-span-2 md:col-span-1'>
                                 <label>PENCOM:</label>
-                                <input type="file" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id='pencom-file' name='pencom-file'/>
+                                <CustomFileUpload input_id="pencom-file"/>
+                                {/* <input type="file" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id='pencom-file' name='pencom-file'/> */}
                             </div>
                             <div className='col-span-2 md:col-span-1'>
                                 <label>Sworn Affidavit:</label>
-                                <input type="file" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id='sworn-affidavit-file' name='sworn-affidavit-file'/>
+                                <CustomFileUpload input_id="sworn-affidavit-file"/>
+                                {/* <input type="file" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id='sworn-affidavit-file' name='sworn-affidavit-file'/> */}
                             </div>
                             <div className='col-span-2 md:col-span-1'>
-                                <label>Bank Reference Letter::</label>
-                                <input type="file" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id='bank-reference-letter-file' name='bank-reference-letter-file'/>
+                                <label>Bank Reference Letter:</label>
+                                <CustomFileUpload input_id="bank-reference-letter-file"/>
+                                {/* <input type="file" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id='bank-reference-letter-file' name='bank-reference-letter-file'/> */}
                             </div>
                             <div className='col-span-2 md:col-span-1'>
                                 <label>Company Profile:</label>
-                                <input type="file" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id='company-profile-file' name='company-profile-file'/>
+                                <CustomFileUpload input_id="company-profile-file"/>
+                                {/* <input type="file" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id='company-profile-file' name='company-profile-file'/> */}
                             </div>
                             <div className='col-span-2 md:col-span-1'>
                                 <label>Signature:</label>
-                                <input type="file" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id='signature-file' name='signature-file'/>
+                                <CustomFileUpload input_id="signature-file"/>
+                                {/* <input type="file" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id='signature-file' name='signature-file'/> */}
                             </div>
                             
                             

@@ -4,12 +4,12 @@ import useTable from "../../../hooks/useTable";
 // import styles from "./Table.module.css";
 import TableFooter from "./TableFooter";
 
-const EquipmentsTable = ({ data, rowsPerPage }) => {
+const EquipmentsTable = ({ data, rowsPerPage, handleShow }) => {
   const [page, setPage] = useState(1);
   const { slice, range } = useTable(data, page, rowsPerPage);
     return (
         <>
-            <div className='bg-white table-holdr sub-contenty'>
+            <div className='xbg-white bg-colr table-holdr sub-contenty'>
                 <div className="flex flex-col">
                     <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                         <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -33,11 +33,12 @@ const EquipmentsTable = ({ data, rowsPerPage }) => {
                                             <th scope="col" className="text-center px-6 py-3 font-medium text-gray-500">
                                                 Last Purchase Date
                                             </th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody className="bg-white divide-y divide-gray-200">
                                         {slice.map((e) => (
-                                            <tr key={e.namex}>
+                                            <tr key={e.id}>
                                                 <td className="px-6 py-4 whitespace-nowrap">
                                                 <div>{e.namex}</div>
                                                 <div className='txt-greyed-out'>Equipment No: {e.equipment_number}</div>
@@ -46,6 +47,7 @@ const EquipmentsTable = ({ data, rowsPerPage }) => {
                                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">{e.amount}</td>
                                                 <td className="px-3 py-4 whitespace-nowrap text-center">{e.quantity}</td>
                                                 <td className="px-6 py-4 whitespace-nowrap text-sm"><div>{e.last_purchase}</div></td>
+                                                <td><button onClick={handleShow} className="text-xs p-2 xpass">edit</button> </td>
                                             </tr>
                                         ))}
                                     </tbody>

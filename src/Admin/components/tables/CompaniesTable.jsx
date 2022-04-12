@@ -5,7 +5,7 @@ import useTable from "../../../hooks/useTable";
 import TableFooter from "./TableFooter";
 import company_img from '../../../assets/images/generic-company-logo.png'
 
-const CompaniesTable = ({ data, rowsPerPage }) => {
+const CompaniesTable = ({ data, rowsPerPage, handleShow }) => {
   const [page, setPage] = useState(1);
   const { slice, range } = useTable(data, page, rowsPerPage);
     return (
@@ -46,11 +46,12 @@ const CompaniesTable = ({ data, rowsPerPage }) => {
                                             <th scope="col" className="text-center px-6 py-3 font-medium text-gray-500">
                                                 Contact
                                             </th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody className="bg-white divide-y divide-gray-200">
                                         {slice.map((e) => (
-                                            <tr key={e.namex}>
+                                            <tr key={e.id}>
                                                 <td className="px-6 py-4 whitespace-nowrap flex">
                                                     <img src={company_img} alt="company img" width={40} className="overflow-hidden object-cover rounded-full border-2 mr-3"/>
                                                     <span className="my-auto">{e.company_name}</span>
@@ -63,6 +64,7 @@ const CompaniesTable = ({ data, rowsPerPage }) => {
                                                     {e.email}
                                                 </td>
                                                 <td className="px-6 py-4 whitespace-nowrap text-sm"><div>{e.contact}</div></td>
+                                                <td><button onClick={handleShow} className="text-xs p-2 xpass">view</button> </td>
                                             </tr>
 
                             
