@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import DashHeaderDetails from './DashHeaderDetails';
 import EditBids from '../modals/EditDetails/EditBids'
 import generic_logo from '../../../assets/images/generic-company-logo.png'
+import EditIcon from '../../../assets/icons/Details/EditIcon';
+import DocumentCopyIcon from '../../../assets/icons/Details/DocumentCopyIcon';
 // import DashHeader from '../dash/DashHeader';
 
 export default function BidDetails(props) {
@@ -16,43 +18,46 @@ export default function BidDetails(props) {
     return(
         <>
             <EditBids  show={showEdit} handleShow={handleShowEdit}/>
-            <div className={`main-body bg-white ${props.show}`}>
-                <DashHeaderDetails title={props.name} handleShow={props.handleShow}/>
+            <div className={`details-main-body bg-whitex ${props.show}`}>
+                <DashHeaderDetails title={props.data.name} handleShow={props.handleShow}/>
+                <div className='my-3 text-lg pl-3 font-bold txt-headr flex lg:hidden relative'>
+                    {props.data.name}<span className={`flt-id xwarn`}>Pending</span>
+                </div>
             
-                <div className='bg-white w-full'>
-                    <div className='bg-white shadow flex'>
-                        <span className='my-2 flex-auto mx-4'>
+                <div className='bg-whitex w-full pr-5'>
+                    <div className='details-summary gap-2x'>
+                        <div className='details-summary-item'>
                             <div className='txt-greyed-out'>Tender No</div>
                             <div className='font-bold'>2359853</div>
-                        </span>
-                        <span className='my-2 flex-auto'>
+                        </div>
+                        <div className='details-summary-item'>
                             <div className='txt-greyed-out'>Client</div>
                             <div className='font-bold'>Stark Industries</div>
-                        </span>
-                        <span className='my-2 flex-auto'>
+                        </div>
+                        <div className='details-summary-item'>
                             <div className='txt-greyed-out'>Client Department</div>
                             <div className='font-bold'>Procurement Department</div>
-                        </span>
-                        <span className='my-2 flex-auto'>
+                        </div>
+                        <div className='details-summary-item'>
                             <div className='txt-greyed-out'>Contract Sum</div>
                             <div className='font-bold'>₦6,751,214.65</div>
-                        </span>
-                        <span className='my-2 flex-auto'>
+                        </div>
+                        <div className='details-summary-item'>
                             <div className='txt-greyed-out'>Winning Company</div>
                             <div className='font-bold'>Biffco Enterprises Ltd.</div>
-                        </span>
-                        <span className='my-2 flex-auto'>
+                        </div>
+                        <div className='details-summary-item'>
                             <div className='txt-greyed-out'>Date Submitted</div>
                             <div className='font-bold'>22 March 2022</div>
-                        </span>
-                        <div className=''>
-                            <button className='border-2 px-2 py-1 rounded' onClick={handleShowEdit}>
-                                Edit Details
+                        </div>
+                        <div className='details-summary-edit-btn'>
+                            <button className='border-2 border- px-2 py-1 rounded inline-block mt-2 whitespace-nowrap' onClick={handleShowEdit}>
+                                <EditIcon classx='fill-current inline'/> Edit Details
                             </button>
                         </div>
                     </div>
-                    <div className='m-4 bg-white shadow grid grid-cols-7 gap-12 p-7'>
-                        <div className='col-span-5 details-desc'>
+                    <div className='m-4 bg-whitex shadow grid grid-cols-7 gap-12 p-7'>
+                        <div className='col-span-7 lg:col-span-5 details-desc'>
                             <div className="description mt-5">
                                 <div className='font-bold'>
                                     BID DESCRIPTION
@@ -86,21 +91,27 @@ export default function BidDetails(props) {
                                 </div>
                             </div>
                         </div>
-                        <div className='side-content col-span-2'>
+                        <div className='side-content col-span-7 md:col-span-4 lg:col-span-2'>
                             <div>
                                 BIDDING COMPANIES
                                 <ul>
-                                    <li className='flex'><img src={generic_logo} alt="company img" width={30} className="overflow-hidden object-cover rounded-full border-2 mr-3"/>Assure Re Intermediaries Inc</li>
-                                    <li className='flex'><img src={generic_logo} alt="company img" width={30} className="overflow-hidden object-cover rounded-full border-2 mr-3"/>Cyberdyne Systems Corp.</li>
-                                    <li className='flex'><img src={generic_logo} alt="company img" width={30} className="overflow-hidden object-cover rounded-full border-2 mr-3"/>Wayne Enterprises</li>
+                                    {props.data.bidding_companies.map(e =>{
+                                        return(
+                                            <li className='relative mb-2' key={e}><img src={generic_logo} alt="company img" width={30} className="overflow-hidden object-cover rounded-full border-2 mr-3 absolute "/><div className='ml-9'>{e}</div></li>
+                                        )
+                                    })
+
+                                    }
                                 </ul>
                             </div>
                             <div className='mt-8'>
                                 FILES
                                 <ul>
-                                    <li className='flex'><img src={generic_logo} alt="company img" width={30} className="overflow-hidden object-cover rounded-full border-2 mr-3"/>Letter Of Award.docx</li>
-                                    <li className='flex'><img src={generic_logo} alt="company img" width={30} className="overflow-hidden object-cover rounded-full border-2 mr-3"/>Purchase Order.jpeng</li>
-                                    <li className='flex'><img src={generic_logo} alt="company img" width={30} className="overflow-hidden object-cover rounded-full border-2 mr-3"/>Acceptance Letter.pdf</li>
+                                    {props.data.uploaded_files.map(e=>{
+                                        return(
+                                            <li className='flex mb-1' key={e}><DocumentCopyIcon classx="fill-current txt-bluex mr-3"/>{e}</li>
+                                        )
+                                    })}
                                 </ul>
                             </div>
 

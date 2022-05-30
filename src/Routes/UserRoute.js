@@ -11,23 +11,11 @@ import DashEquipments from '../User/pages/dash/DashEquipments';
 import DashExpenses from '../User/pages/dash/DashExpenses';
 import LogIn from '../Auth/LogIn';
 import SignUp from '../Auth/SignUp';
-import '../User/pages/dash/DashHomeStyle.css'
+// import '../User/pages/dash/DashHomeStyle.css'
 
-export default function Routez() {
+export default function UserRoutez() {
   return( 
   <div>
-    {/* <Routes>
-      <Route exact path="/" element={<LoginModal/>}/>
-      <Route path="/dash" element={<DashHome/>}/>
-      <Route path="/dash_projects" element={<DashProjects/>}/>
-      <Route path="/dash_bids" element={<DashBids/>}/>
-      <Route path="/dash_companies" element={<DashCompanies/>}/>
-      <Route path="/dash_tasks" element={<DashTasks/>}/>
-      <Route path="/dash_equipments" element={<DashEquipments/>}/>
-      <Route path="/dash_expenses" element={<DashExpenses/>}/>
-      <Route path="/log_in" element={<LogIn/>}/>
-      <Route path="/sign_up" element={<SignUp/>}/>
-    </Routes> */}
     <Router>
       <Switch>
         <Route exact path="/">

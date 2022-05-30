@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import DashHeaderDetails from './DashHeaderDetails';
-import EditBids from '../modals/EditDetails/EditBids'
+import EditIcon from '../../../assets/icons/Details/EditIcon';
+import EditTask from '../modals/EditDetails/EditTask';
 // import generic_logo from '../../../assets/images/generic-company-logo.png'
 // import DashHeader from '../dash/DashHeader';
 
@@ -15,36 +16,40 @@ export default function TaskDetails(props) {
 
     return(
         <>
-            <EditBids  show={showEdit} handleShow={handleShowEdit}/>
-            <div className={`main-body bg-white ${props.show}`}>
+            <EditTask  show={showEdit} handleShow={handleShowEdit}/>
+            <div className={`details-main-body bg-whitex ${props.show}`}>
                 <DashHeaderDetails title={props.name} handleShow={props.handleShow}/>
             
-                <div className='bg-white w-full'>
-                    <div className='bg-white shadow flex'>
-                        <span className='my-2 flex-auto mx-4'>
+                <div className='my-3 text-lg pl-3 font-bold txt-headr flex lg:hidden relative'>
+                    {props.name}<span className={`flt-id xwarn`}>Pending</span>
+                </div>
+
+                <div className='bg-whitex w-full pr-5'>
+                    <div className='details-summary'>
+                        <div className='details-summary-item'>
                             <div className='txt-greyed-out'>Initiated By</div>
                             <div className='font-bold'>James Brown</div>
-                        </span>
-                        <span className='my-2 flex-auto'>
+                        </div>
+                        <div className='details-summary-item'>
                             <div className='txt-greyed-out'>Assigned To </div>
                             <div className='font-bold'>Emmanuel Fayemi</div>
-                        </span>
-                        <span className='my-2 flex-auto'>
+                        </div>
+                        <div className='details-summary-item'>
                             <div className='txt-greyed-out'>Date Created</div>
                             <div className='font-bold'>22 March 2022</div>
-                        </span>
-                        <span className='my-2 flex-auto'>
+                        </div>
+                        <div className='details-summary-item'>
                             <div className='txt-greyed-out'>Due Date</div>
                             <div className='font-bold'>22 April 2022</div>
-                        </span>
-                        <div className=''>
-                            <button className='border-2 px-2 py-1 rounded' onClick={handleShowEdit}>
-                                Edit Details
+                        </div>
+                        <div className='details-summary-edit-btn'>
+                            <button className='border-2 border- px-2 py-1 rounded inline-block mt-2 whitespace-nowrap' onClick={handleShowEdit}>
+                                <EditIcon classx='fill-current inline'/> Edit Details
                             </button>
                         </div>
                     </div>
-                    <div className='m-4 bg-white shadow grid grid-cols-7 gap-12 p-7'>
-                        <div className='col-span-5 details-desc'>
+                    <div className='m-4 bg-whitex shadow grid grid-cols-7 gap-12 p-7'>
+                        <div className='col-span-7 md:col-span-5 details-desc'>
                             <div className="description mt-5">
                                 <div className='font-bold'>
                                     TASK DESCRIPTION
@@ -78,9 +83,11 @@ export default function TaskDetails(props) {
                                 </div>
                             </div>
                         </div>
-                        <div className='side-content col-span-2'>
+                        <div className='side-content md:col-span-2 col-span-7'>
                             <div>
-                                PEOPLE INVOLVED
+                                <div className='font-bold'>
+                                    PEOPLE INVOLVED
+                                </div>
                                 <ul>
                                     <li className='flex'> Gbenga Durotimo</li>
                                     <li className='flex'> Osita Buhari</li>

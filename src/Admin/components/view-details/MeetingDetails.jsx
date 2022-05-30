@@ -5,6 +5,9 @@ import EditMeeting from '../modals/EditDetails/EditMeeting';
 // import generic_logo from '../../../assets/images/generic-company-logo.png'
 // import DashHeader from '../dash/DashHeader';
 
+// redux
+import {useSelector} from 'react-redux';
+
 export default function MeetingDetails(props) {
 
 
@@ -13,45 +16,51 @@ export default function MeetingDetails(props) {
         if(showEdit === "hidden"){ setShowEdit("") }
         else{setShowEdit("hidden")}
     }
+    // redux variables
+    const currentDataMeetings = useSelector(state => state.currentDataMeetings);
 
     return(
         <>
             <EditMeeting  show={showEdit} handleShow={handleShowEdit}/>
-            <div className={`details-main-body bg-white ${props.show}`}>
-                <DashHeaderDetails title={props.name} handleShow={props.handleShow}/>
+            <div className={`details-main-body bg-whitex ${props.show}`}>
+                <DashHeaderDetails title={currentDataMeetings.name} handleShow={props.handleShow} status={currentDataMeetings.status}/>
+                <div className='my-3 text-lg pl-3 font-bold txt-headr md:flex lg:hidden relative'>
+                    {currentDataMeetings.name}<br/> <span className={`md:block hidden flt-id xwarn`}>Pending</span>
+                    <span className={`md:hidden block-inline xwarn`}>Pending</span>
+                </div>
             
-                <div className='bg-white w-full pr-5'>
-                    <div className='bg-white shadow flex'>
-                        <div className="flex flex-auto ml-2">
-                            <span className='my-2 flex-auto'>
+                <div className='bg-whitex w-full pr-5'>
+                    <div className='bg-whitex shadow flex'>
+                        <div className="details-summary">
+                            <div className='details-summary-item'>
                                 <div className='txt-greyed-out'>Date Created</div>
                                 <div className='font-bold'>22 March 2022</div>
-                            </span>
-                            <span className='my-2 flex-auto'>
+                            </div>
+                            <div className='details-summary-item'>
                                 <div className='txt-greyed-out'>Start Time</div>
                                 <div className='font-bold'>10:00 AM</div>
-                            </span>
-                            <span className='my-2 flex-auto'>
+                            </div>
+                            <div className='details-summary-item'>
                                 <div className='txt-greyed-out'>End Time</div>
                                 <div className='font-bold'>11:00 AM</div>
-                            </span>
-                            <span className='my-2 flex-auto mx-4'>
+                            </div>
+                            <div className='details-summary-item'>
                                 <div className='txt-greyed-out'>Mode</div>
                                 <div className='font-bold'>Physical Meeting</div>
-                            </span>
-                            <span className='my-2 flex-auto'>
+                            </div>
+                            <div className='details-summary-item'>
                                 <div className='txt-greyed-out'>Location</div>
                                 <div className='font-bold'>Small Meeting Room</div>
-                            </span>
-                        </div>
-                        <div className=''>
-                            <button className='border-2 border- px-2 py-1 rounded inline-block mt-2' onClick={handleShowEdit}>
-                                <EditIcon classx='fill-current inline'/> Edit Details
-                            </button>
+                            </div>
+                            <div className='details-summary-edit-btn'>
+                                <button className='border-2 border- px-2 py-1 rounded inline-block mt-2 whitespace-nowrap' onClick={handleShowEdit}>
+                                    <EditIcon classx='fill-current inline'/> Edit Details
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <div className='m-4 bg-white shadow grid grid-cols-7 gap-12 p-7'>
-                        <div className='col-span-5 details-desc'>
+                    <div className='m-4 bg-whitex shadow grid grid-cols-7 gap-4 p-7'>
+                        <div className='md:col-span-5 col-span-7 details-desc'>
                             <div className="description mt-5">
                                 <div className='font-bold'>
                                     MEETING DESCRIPTION
@@ -77,15 +86,20 @@ export default function MeetingDetails(props) {
                                 </div>
                             </div>
                         </div>
-                        <div className='side-content col-span-2'>
+                        <div className='side-content md:col-span-2 col-span-7'>
                             <div>
-                                INITIATED BY
+                                <div className='font-bold'>
+                                    INITIATED BY
+                                </div>
+                                
                                 <ul>
                                     <li className='flex'> Gbenga Durotimo</li>
                                 </ul>
                             </div>
-                            <div className='mt-24'>
-                                INVITED PERSONNEL
+                            <div className='md:mt-24 mt-4'>
+                                <div className='font-bold'>
+                                    INVITED PERSONNEL
+                                </div>
                                 <ul>
                                     <li className='flex'> Gbenga Durotimo</li>
                                     <li className='flex'> Osita Buhari</li>

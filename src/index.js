@@ -6,15 +6,29 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom'
 import './assets/fonts/Mulish/static/Mulish-Regular.ttf';
 
+
 // fontawesome lirary
-import './fontawesome'
+import './fontawesome';
+
+// redux
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+import allReducers from './redux/reducers';
+
+const store = createStore(
+  allReducers,  
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 ReactDOM.render(
   // <React.StrictMode>
-      // {/* </React.StrictMode>, */}
+  // </React.StrictMode>
   <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </BrowserRouter>
+,
   document.getElementById('root')
 );
 

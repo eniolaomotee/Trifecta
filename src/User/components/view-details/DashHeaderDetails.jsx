@@ -18,10 +18,10 @@ export default function DashHeaderDetails(props) {
   // else{status_cn = 'ml-auto capitalize bg-amber-100 text-amber-500 rounded-lg text-xs p-1 px-2'}
   return (
     
-    <div className="headr bg-white flex pr-4 border-b">
+    <div className="headr bg-whitex flex pr-4 border-b">
         <div className='my-auto text-lg pl-3 font-bold txt-headr flex'>
           <button  onClick={props.handleShow}><ArrowleftIcon classx='stroke-current xw-full xh-full mr-3' /></button>
-          {props.title}<span className={`flt-id xwarn`}>Pending</span>
+          <span className='hidden lg:block'>{props.title}<span className={`flt-id xwarn`}>Pending</span></span>
         </div>
         <div className=' text-blue-900 ml-auto mr-3 my-auto xflex h-full align-middle py-4'>
           <span className='pr-10 relative top-1'><FontAwesomeIcon icon={['fas', 'bell']}/></span>

@@ -4,13 +4,14 @@ import useTable from "../../../hooks/useTable";
 // import styles from "./Table.module.css";
 import TableFooter from "./TableFooter";
 import company_img from '../../../assets/images/generic-company-logo.png'
+import EyeIcon from '../../../assets/icons/tables/EyeIcon'
 
-const CompaniesTable = ({ data, rowsPerPage }) => {
+const CompaniesTable = ({ data, rowsPerPage, handleShow }) => {
   const [page, setPage] = useState(1);
   const { slice, range } = useTable(data, page, rowsPerPage);
     return (
         <>
-            <div className='bg-white table-holdr sub-contenty'>
+            <div className='bg-whitex table-holdr sub-contenty'>
                 <div className="flex flex-col">
                     <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                         <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -46,14 +47,15 @@ const CompaniesTable = ({ data, rowsPerPage }) => {
                                             <th scope="col" className="text-center px-6 py-3 font-medium text-gray-500">
                                                 Contact
                                             </th>
+                                            <th></th>
                                         </tr>
                                     </thead>
-                                    <tbody className="bg-white divide-y divide-gray-200">
+                                    <tbody className="bg-whitex divide-y divide-gray-200">
                                         {slice.map((e) => (
-                                            <tr key={e.namex}>
-                                                <td className="px-6 py-4 whitespace-nowrap flex">
-                                                    <img src={company_img} alt="company img" width={40} className="overflow-hidden object-cover rounded-full border-2 mr-3"/>
-                                                    <span className="my-auto">{e.company_name}</span>
+                                            <tr key={e.id}>
+                                                <td className="px-6 py-4 whitespace-nowrap xflex relative">
+                                                    <img src={company_img} alt="company img" width={40} className="overflow-hidden object-cover rounded-full border-2 mr-3 w-8 h-8 absolute top-3"/>
+                                                    <span className="my-auto ml-8">{e.company_name}</span>
                                                 </td>
                                                 <td className="px-6 py-4 whitespace-nowrap">
                                                     RC{e.rc}
@@ -63,10 +65,20 @@ const CompaniesTable = ({ data, rowsPerPage }) => {
                                                     {e.email}
                                                 </td>
                                                 <td className="px-6 py-4 whitespace-nowrap text-sm"><div>{e.contact}</div></td>
+                                                <td>
+                                                    <button onClick={handleShow} className="text-xs px-2 py-1 xpass flex">
+                                                        <EyeIcon classx="fill-current"/> <span className="my-auto">view</span>
+                                                    </button> 
+                                                </td>
                                             </tr>
 
                             
                                         ))}
+                                        <tr>
+                                            <TableFooter range={range} slice={slice} setPage={setPage} page={page} />
+
+                                        </tr>
+
                                     </tbody>
                                 </table>
                             </div>
@@ -74,7 +86,6 @@ const CompaniesTable = ({ data, rowsPerPage }) => {
                     </div>
                 </div>
             </div>
-            <TableFooter range={range} slice={slice} setPage={setPage} page={page} />
         </>
     );
 };

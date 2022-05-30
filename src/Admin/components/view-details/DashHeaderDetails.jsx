@@ -12,18 +12,22 @@ amountx: 20000,
 total_amountx: 20000
 }
 export default function DashHeaderDetails(props) {
-  // var status_cn;
-  // if(props.bids.statusx === 'approved'){status_cn = 'ml-auto capitalize bg-green-100 text-green-500 rounded-lg text-xs p-1 px-2'}
-  // else if(props.bids.statusx === 'rejected'){status_cn = 'ml-auto capitalize bg-red-100 text-red-500 rounded-lg text-xs p-1 px-2'}
-  // else{status_cn = 'ml-auto capitalize bg-amber-100 text-amber-500 rounded-lg text-xs p-1 px-2'}
+  var status_cn;
+  var pro_status;
+  if(props.status !== undefined){pro_status = props.status.toLowerCase();}
+  // var pro_status = props.status.toLowerCase();
+  
+  if(pro_status === 'activated' || pro_status === 'active' || pro_status === 'approved' || pro_status === 'completed'){status_cn = 'xpass'}
+  else if(pro_status === 'deactivated' || pro_status === 'unfinished' || pro_status === 'rejected' || pro_status === 'not started'){status_cn = 'xfail'}
+  else{status_cn = 'xwarn'}
   return (
     
-    <div className="headr bg-white flex pr-4 border-b">
+    <div className="headr bg-whitex flex pr-4 border-b">
         <div className='my-auto text-lg pl-3 font-bold txt-headr flex'>
           <button  onClick={props.handleShow}><ArrowleftIcon classx='stroke-current xw-full xh-full mr-3' /></button>
-          {props.title}<span className={`flt-id xwarn`}>Pending</span>
+          <span className='hidden lg:block'>{props.title}<span className={`flt-id uppercase ${status_cn}`}>{pro_status}</span></span>
         </div>
-        <div className=' text-blue-900 ml-auto mr-3 my-auto xflex h-full align-middle py-4'>
+        <div className='txt-dark-bluex ml-auto mr-3 my-auto xflex h-full align-middle py-4'>
           <span className='pr-10 relative top-1'><FontAwesomeIcon icon={['fas', 'bell']}/></span>
           <span className='inline-flex'>
             <span className='pr-2 pl-10 cborder border-l-2'>

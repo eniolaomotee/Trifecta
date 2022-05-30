@@ -28,39 +28,39 @@ export default function EditCompany(props) {
                         <label className='text-blue-900' htmlFor="company-address">Address</label><br></br>
                         <input type="text" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline " placeholder="Enter Company's Address" id='company-address' name='company-address'/>
                     </div>
-                    <div className="col-span-1 text-left">
+                    <div className="col-span-2 md:col-span-1 text-left">
                         <label className='text-blue-900' htmlFor="email">Email Address</label>
                         <input type="text"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="email" placeholder="teremaxe@gmail.com" name='email'/>
                     </div>
-                    <div className="col-span-1 text-left">
+                    <div className="col-span-2 md:col-span-1 text-left">
                         <label className='text-blue-900' htmlFor="contact-number">Contact Number</label>
                         <input type="number"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="contact-number" placeholder="09065325428" name='contact-number'/>
                     </div>
-                    <div className="col-span-1 text-left">
+                    <div className="col-span-2 md:col-span-1 text-left">
                         <label className='text-blue-900' htmlFor="rc-number">RC Number</label>
                         <input type="text"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="rc-number" placeholder="TRF/NIG/31/2021" name='rc-number'/>
                     </div>
-                    <div className="col-span-1 text-left">
+                    <div className="col-span-2 md:col-span-1 text-left">
                         <label className='text-blue-900' htmlFor="tax-id-number">Tax Identification Number</label>
                         <input type="text"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="tax-id-number" placeholder="FIRS/TIN/32312021" name='tax-id-number'/>
                     </div>
                     <div className="col-span-4 grid grid-cols-8 gap-4">
-                        <div className="col-span-3 text-left">
+                        <div className="col-span-4 md:col-span-3 text-left">
                             <label className='text-blue-900' htmlFor="account-name">Account Name</label>
                             <input type="text"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="account-name" placeholder="Olivia Pope and Associates" name='account-name'/>
                         </div>
-                        <div className="col-span-2 text-left">
+                        <div className="col-span-4 md:col-span-2 text-left">
                             <label className='text-blue-900' htmlFor="account-number">Account Number</label>
                             <input type="text" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="account-number" placeholder="0452334316" name='account-number'/>
                         </div>
                         
-                        <div className="col-span-2 text-left">
+                        <div className="col-span-5 md:col-span-2 text-left">
                             <label className='text-blue-900' htmlFor="bank-name">Bank Name</label>
                             <select type="text"className="shadow xappearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="bank-name" name='bank-name'>
                                 {approvedBanks.map(e=>{return <option key={e.id} className='' value={e.name}>{e.name}</option>})}
                             </select>
                         </div>
-                        <div className="col-span12 text-left">
+                        <div className="col-span-3 md:col-span-1 text-left">
                             <label className='text-blue-900' htmlFor="sort-code">Sort Code</label>
                             <input type="number"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="sort-code" placeholder="325428" name='sort-code'/>
                         </div>
@@ -70,54 +70,45 @@ export default function EditCompany(props) {
                         <div className='grid grid-cols-4 gap-4'>
                             <div className='col-span-2 md:col-span-1'>
                                 <label>TCC:</label>
-                                <CustomFileUpload input_id="tcc-file"/>
-                                {/* <input type="file" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id='tcc-file' name='tcc-file'/> */}
+                                <CustomFileUpload input_id="tcc-file-edit"/>
                             </div>
                             <div className='col-span-2 md:col-span-1'>
                                 <label>ITF:</label>
-                                <CustomFileUpload input_id="itf-file"/>
-                                {/* <input type="file" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id='itf-file' name='itf-file'/> */}
+                                <CustomFileUpload input_id="itf-file-edit"/>
                             </div>
                             <div className='col-span-2 md:col-span-1'>
                                 <label>NSITF:</label>
-                                <CustomFileUpload input_id="msitf-file"/>
-                                {/* <input type="file" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id='msitf-file' name='msitf-file'/> */}
+                                <CustomFileUpload input_id="msitf-file-edit"/>
                             </div>
                             <div className='col-span-2 md:col-span-1'>
                                 <label>BPP:</label>
-                                <CustomFileUpload input_id="bpp-file"/>
-                                {/* <input type="file" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id='bpp-file' name='bpp-file'/> */}
+                                <CustomFileUpload input_id="bpp-file-edit"/>
                             </div>
                             <div className='col-span-2 md:col-span-1'>
                                 <label>PENCOM:</label>
-                                <CustomFileUpload input_id="pencom-file"/>
-                                {/* <input type="file" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id='pencom-file' name='pencom-file'/> */}
+                                <CustomFileUpload input_id="pencom-file-edit"/>
                             </div>
                             <div className='col-span-2 md:col-span-1'>
                                 <label>Sworn Affidavit:</label>
-                                <CustomFileUpload input_id="sworn-affidavit-file"/>
-                                {/* <input type="file" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id='sworn-affidavit-file' name='sworn-affidavit-file'/> */}
+                                <CustomFileUpload input_id="sworn-affidavit-file-edit"/>
                             </div>
                             <div className='col-span-2 md:col-span-1'>
                                 <label>Bank Reference Letter:</label>
-                                <CustomFileUpload input_id="bank-reference-letter-file"/>
-                                {/* <input type="file" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id='bank-reference-letter-file' name='bank-reference-letter-file'/> */}
+                                <CustomFileUpload input_id="bank-reference-letter-file-edit"/>
                             </div>
                             <div className='col-span-2 md:col-span-1'>
                                 <label>Company Profile:</label>
-                                <CustomFileUpload input_id="company-profile-file"/>
-                                {/* <input type="file" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id='company-profile-file' name='company-profile-file'/> */}
+                                <CustomFileUpload input_id="company-profile-file-edit"/>
                             </div>
                             <div className='col-span-2 md:col-span-1'>
                                 <label>Signature:</label>
-                                <CustomFileUpload input_id="signature-file"/>
-                                {/* <input type="file" className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id='signature-file' name='signature-file'/> */}
+                                <CustomFileUpload input_id="signature-file-edit"/>
                             </div>
                             
                             
                         </div>
                     </div>
-                    <input type="submit" className="md:col-start-4 col-start-3 md:col-span-1 col-span-2 shadow appearance-none border rounded w-full py-2 px-3 text-white bg-blue-800 mt-2 focus:outline-none focus:shadow-outline" id='submit-button' value='Create Project'/>
+                    <input type="submit" className="md:col-start-4 col-start-3 md:col-span-1 col-span-2 shadow appearance-none border rounded w-full py-2 px-3 text-white bg-blue-800 mt-2 focus:outline-none focus:shadow-outline" id='submit-button' value='Save Changes'/>
                 </form>
             </div>
         </div>

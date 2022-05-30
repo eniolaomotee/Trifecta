@@ -9,11 +9,14 @@ import DashCompanies from '../Admin/pages/dash/DashCompanies';
 import DashTasks from '../Admin/pages/dash/DashTasks';
 import DashEquipments from '../Admin/pages/dash/DashEquipments';
 import DashExpenses from '../Admin/pages/dash/DashExpenses';
-import LogIn from '../Auth/LogIn'
-import SignUp from '../Auth/SignUp';
-import '../assets/css-styles/DashHomeStyle.css'
-import '../assets/css-styles/ModalStyle.css'
 import DashMeetings from '../Admin/pages/dash/DashMeetings';
+import DashVendors from '../Admin/pages/dash/DashVendors';
+import DashStaff from '../Admin/pages/dash/DashStaff';
+import Settings from '../Admin/pages/dash/Settings';
+
+
+
+import AuthPage from '../Auth/Index';
 
 export default function Routez() {
   return( 
@@ -21,11 +24,9 @@ export default function Routez() {
     <Router>
       <Switch>
         <Route exact path="/">
-          <LogIn/>
+          <AuthPage/>
         </Route>
-        <Route path="/sign_up">
-          <SignUp/>
-        </Route>
+        
         <Route exact path="/dash">
           <DashHome/>
         </Route>
@@ -47,8 +48,17 @@ export default function Routez() {
         <Route path="/dash_meetings">
           <DashMeetings/>
         </Route>
+        <Route path="/dash_staff">
+          <DashStaff/>
+        </Route>
+        <Route path="/dash_vendors">
+          <DashVendors/>
+        </Route>
         <Route path="/dash_expenses">
           <DashExpenses/>
+        </Route>
+        <Route path="/settings">
+          <Settings/>
         </Route>
       </Switch>
     </Router>

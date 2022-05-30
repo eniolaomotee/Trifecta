@@ -45,7 +45,7 @@ const TableFooter = ({ range, setPage, page, slice }) => {
       ))} */}
       <div className={styles.nav_container}>
         <div className={styles.button_cus}><button onClick={() => flipPrev()}><ArrowleftIcon classx='stroke-current w-full h-full'/></button>Prev</div>
-        <div className={styles.button}>{page}</div>
+        <div className={styles.button}>{page} of {range.length}</div>
         {/* <div className={styles.temp_spacer}></div> */}
         <div className={styles.button_cus}>Next<button onClick={() => flipNext()}><ArrowRightIcon classx='stroke-current w-full h-full'/></button></div>
 

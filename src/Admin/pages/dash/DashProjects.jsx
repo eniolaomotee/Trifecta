@@ -1,14 +1,20 @@
-import React, { useState } from 'react';
-import SidePanel from '../../components/dash/SidePanel';
-import DashHeader from '../../components/dash/DashHeader';
-import {regularx, activex} from '../../components/dash/SidePanel'
+import React, { useState, useEffect } from 'react';
+
+import SidePanel from '../../components/menu/SidePanel';
+// import MiniSidePanel from '../../components/menu/MiniSidePanel';
+import {regularx, activex, closeNav} from '../../components/menu/SidePanel';
+import DashHeader from '../../components/header/DashHeader';
 
 import AddProject from '../../components/modals/Add/AddProject';
-// import {userx} from './components/DashHeader'
+import ProjectDetails from '../../components/view-details/ProjectDetails';
+import ProjectCards from '../../components/cards/ProjectCards';
+
+import projectsx from '../../../tempDb/projects';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SearchSvg from '../../../assets/icons/dash-projects/SearchSvg';
-import ProjectDetails from '../../components/view-details/ProjectDetails';
-import MiniSidePanel from '../../components/dash/MiniSidePanel';
+import LoadingScreen from './LoadingScreen';
+
 
 export default function DashProjects() {
     var active_selectr = {
@@ -19,15 +25,30 @@ export default function DashProjects() {
         tasks: regularx,
         equipments : regularx,
         meetings : regularx,
+        vendors : regularx,
+        staff : regularx,
         expenses: regularx,
+
         logout: regularx,
         settings: regularx
     }
-    var naira_sign = '\u20a6';    
     
+    const [isLoading, setIsLoading] = useState(true);
+    useEffect( ()=> {
+        fetch(`https://api.publicapis.org/entries`)
+        .then(res => res.json())
+        .then(data => {
+            setIsLoading(false);
+        })
+        .catch(err => console.log(err));
+    }, []);   
+  
+
     const [show, setShow] = useState("hidden");
     const [showTile, setShowTile] = useState("");
     const [showDetails, setShowDetails] = useState("hidden");
+    const [Data, setData] = useState(projectsx);
+
     
     const handleShow = () => {
       if(show === "hidden"){ setShow("") }
@@ -38,76 +59,47 @@ export default function DashProjects() {
         else{setShowDetails("hidden"); setShowTile("")}
     }
 
+    function SearchFilter(){
+      var typed_name = document.getElementById("title-search").value.toLowerCase();
+      setData(projectsx.filter(e=>{
+        return(e.name.toLowerCase().includes(typed_name))
+      }))
+    }
 
-    var projectsx = [
-      { id:1, name: 'Apo Legislative Quarters Reconstruction', tag: 'construction', client: 'Ministry of Housing', statusx: 'completed', payment_balance: 20000, wallet_amount: 300000, progress: '90%'},
-      { id:2, name: 'Apo Legislative Quarters Reconstruction', tag: 'construction', client: 'Ministry of Housing', statusx: 'active', payment_balance: 20000, wallet_amount: 300000, progress: '40%'},
-      { id:3, name: 'Apo Legislative Quarters Reconstruction', tag: 'construction', client: 'Ministry of Education', statusx: 'not started', payment_balance: 20000, wallet_amount: 300000, progress: '45%'},
-      { id:4, name: 'Apo Legislative Quarters Reconstruction', tag: 'construction', client: 'Ministry of Housing', statusx: 'completed', payment_balance: 20000, wallet_amount: 300000, progress: '68%'},
-      { id:5, name: 'Apo Legislative Quarters Reconstruction', tag: 'construction', client: 'Ministry of Housing', statusx: 'completed', payment_balance: 20000, wallet_amount: 300000, progress: '50%'},
-      { id:6, name: 'Apo Legislative Quarters Reconstruction', tag: 'construction', client: 'Ministry of Housing', statusx: 'not started', payment_balance: 20000, wallet_amount: 300000, progress: '80%'},
-      { id:7, name: 'Apo Legislative Quarters Reconstruction', tag: 'renovation', client: 'Ministry of Housing', statusx: 'completed', payment_balance: 20000, wallet_amount: 300000, progress: '20%'}
-    ]
+
+
+    
     // const [Projectslisst]
   return (
-  <div>
-    <AddProject show={show} handleShow={handleShow}/>
-    <div className={showDetails}>
-      <MiniSidePanel active_selectr={active_selectr}/>
-      <ProjectDetails  name={projectsx[0].name} show={showDetails} handleShow={handleShowDetails}/>
-    </div>
-    <div className={`dashboardx grid grid-cols-7 ${showTile}`}>
-      <SidePanel active_selectr={active_selectr}/>
-      <div className={`main-body bg-colr ${showTile}`}>
-        <DashHeader title='Projects'/>
+    <>
+    <div>
+      <AddProject show={show} handleShow={handleShow}/>
+      <ProjectDetails show={showDetails} handleShow={handleShowDetails}/>
+      <div className={`dashboardx grid grid-cols-7 ${showTile}`}>
+        <SidePanel active_selectr={active_selectr}/>
+        <div className={`main-body bg-colr ${showTile}`}>
+          <DashHeader title='Projects'/>
 
-        <div className="contentx">
-          <div className='search-buttonx my-6 relative grid grid-cols-12 gap-2'>
-            <span className='absolute bottom-5 z-10 top-3 left-4 text-lg txt-darkblue3'>
-              <SearchSvg classx='stroke-current w-5 h-5'/>
-            </span>
-            {/* <span className='absolute bottom-5 z-10 top-2 left-4 text-lg'><FontAwesomeIcon icon={["fas", "search"]} /></span> */}
-            <input type="text" className="col-span-10 shadow appearance-none border rounded xw-9/12 py-2 pl-10 text-blue-700 bg-gray-100 focus:outline-none focus:shadow-outline " placeholder="Enter Project Title" id='project-title' name='project-title'/>
-            <button onClick={handleShow} className='col-span-2 bg-bluex xml-3 py-2 text-white rounded text-sm'><FontAwesomeIcon icon={['fas', 'plus']}/><span className='ml-2'>New Project</span></button>
-          </div>
-          <div className="xrow-span-9 || grid grid-cols-3 grid-rows-3 xgap-2 xgap-x-6 gap-cus-1 gap-y-cus-1">
-            {projectsx.map((e)=>{
-              var progress_style = {
-                width: e.progress
-              }
-              var status_cn;
-              if(e.statusx === 'completed'){status_cn = 'ml-auto capitalize bg-green-100 text-green-500 rounded-lg text-xs p-1 px-2'}
-              else if(e.statusx === 'not started'){status_cn = 'ml-auto capitalize bg-red-100 text-red-500 rounded-lg text-xs p-1 px-2'}
-              else{status_cn = 'ml-auto capitalize bg-amber-100 text-amber-500 rounded-lg text-xs p-1 px-2'}
-              return(
-                <div className=' bg-white rounded txt-darkblue2' key={e.id}>
-                  <div className='p-3 pb-1'>
-                    <div className='flex text-sm'><span>#{e.tag}</span><span className={status_cn}>{e.statusx}</span></div>
-                    <div className='xtext-center text-lg py-2'>{e.name}</div>
-                    <div className='flex txt-greyed-out text-xs'><span>client:</span><span className='ml-auto'>Contract Sum</span></div>
-                    <div className='flex'><span>{e.client}</span><span className='ml-auto'>{naira_sign}{e.payment_balance}</span></div>
-                    <div className='flex my-2'>
-                      <div className='h-1 w-full bg-gray-300 mt-3'>
-                        <div className='h-1 bg-bluex' style={progress_style}></div>
-                      </div>
-                        <span className='w-2/12 pl-2 ml-auto flex-end'>{progress_style.width}</span>
-                    </div>
-
-                  </div>
-                  <div className='w-full bborder border-t-2 flex px-2'>
-                    {/* <div className='py-2 text-2xl'><FontAwesomeIcon icon={['fas', 'wallet']}/><span className='pl-2 text-lg align-middle'>{naira_sign}{userx.total_amountx}</span></div> */}
-                    <button className='bg-bluex text-white p-1 rounded my-2 ml-auto' onClick={handleShowDetails}>View Details</button>
-                  </div>
-                </div>
-              );
-            })}
-          
-          </div>
+          {isLoading ? <LoadingScreen/> : 
+          <div className="contentx" onClick={closeNav}>
+            <div className='my-auto text-lg pl-3 font-bold txt-headr md:hidden block'>
+              Projects
+            </div>
+            <div className='search-buttonx my-6 relative grid grid-cols-12 gap-2'>
+              <span className='absolute bottom-5 z-10 top-3 left-4 text-lg txt-darkblue3'>
+                <SearchSvg classx='stroke-current w-5 h-5'/>
+              </span>
+              {/* <span className='absolute bottom-5 z-10 top-2 left-4 text-lg'><FontAwesomeIcon icon={["fas", "search"]} /></span> */}
+              <input type="text" className="md:col-span-10 col-span-8 shadow appearance-none border rounded py-2 pl-10 text-blue-700 bg-gray-100 focus:outline-none focus:shadow-outline " placeholder="Enter Project Title" id='title-search' name='title-search' onChange={SearchFilter}/>
+              <button onClick={handleShow} className='md:col-span-2 col-span-4 bg-bluex xml-3 py-2 text-white rounded text-sm'><FontAwesomeIcon icon={['fas', 'plus']}/><span className='ml-2'>New Project</span></button>
+            </div>
+            <ProjectCards data={Data} rowsPerPage={6} handleShowDetails={handleShowDetails}/>
 
 
+          </div>}
         </div>
       </div>
     </div>
-  </div>
+    </>
     );
 }

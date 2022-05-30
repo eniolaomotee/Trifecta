@@ -1,13 +1,8 @@
 import React from 'react';
-import Multiselect from 'multiselect-react-dropdown';
-import AttachmentIcon from '../../../assets/icons/email/AttachmentIcon';
+import CustomFileUploadEmail from '../dash/CustomFileUploadEmail';
+// import Multiselect from 'multiselect-react-dropdown';
 
 export default function SendMail(props) {
-
-    // var naira_sign = '\u20a6'; z
-    // var progress_style = {
-    //     width: "90%"
-    //   }
   return( 
     <div className={props.show}>
         <div className="xback-board txt-dark-bluex">
@@ -24,31 +19,28 @@ export default function SendMail(props) {
                 <form className="px-5 py-6">
                     <div className='border-b-2 border-b-gray-200'>
                         <label className='text-gray-400' htmlFor="recipient">To:</label>
-                        <input type="text"className="appearance-none py-1 px-3 xtext-blue-700 mt-2 focus:outline-none w-4/5" id="recipient" name='recipient'/>
+                        <input type="text"className="appearance-none py-1 px-3 xtext-blue-700 mt-2 focus:outline-none w-4/5 bg-whitex" id="recipient" name='recipient'/>
                     </div>
                     <div className='border-b-2 border-b-gray-200'>
                         <label className='text-gray-400' htmlFor="cc/bcc">Cc/Bcc:</label>
-                        <input type="text"className="appearance-none py-1 px-3 xtext-blue-700 mt-2 focus:outline-none w-4/5" id="cc/bcc" name='cc/bcc'/>
+                        <input type="text"className="appearance-none py-1 px-3 xtext-blue-700 mt-2 focus:outline-none w-4/5 bg-whitex" id="cc/bcc" name='cc/bcc'/>
                     </div>
                     <div className='border-b-2 border-b-gray-200'>
                         <label className='text-gray-400' htmlFor="subject">Subject:</label>
-                        <input type="text"className="appearance-none py-1 px-3 xtext-blue-700 mt-2 focus:outline-none w-4/5" id="subject" name='subject'/>
+                        <input type="text"className="appearance-none py-1 px-3 xtext-blue-700 mt-2 focus:outline-none w-4/5 bg-whitex" id="subject" name='subject'/>
                     </div>
                     <div className='xborder-b-2 xborder-b-gray-200'>
-                        <textarea type="text"className="appearance-none py-1 px-3 xtext-blue-700 mt-2 focus:outline-none w-4/5" id="message" name='message' rows='7'></textarea>
+                        <textarea type="text"className="appearance-none py-1 px-3 xtext-blue-700 mt-2 focus:outline-none w-4/5 bg-whitex" id="message" name='message' rows='7'></textarea>
                     </div>
                     
                 
                     <div className='absolute left-0 bottom-0 w-full border-t-2'>
-                        <div className='text-gray-400 absoluteleft-2bottom-2 pl-2 py-2 inline-flex'>
-                            <label className='text-gray-400 p-2 bg-gray-200 rounded-lg xabsolute xleft-2 xbottom-2' htmlFor='attachment'><AttachmentIcon classx='stroke-current'/></label><span className='ml-2 my-auto'>Add Attachment</span>
-                            <input className='hidden' type='file' name='attachment' id='attachment'/>
-
-                        </div>
+                        <CustomFileUploadEmail/>
                         <input type="submit" className="absolute bottom-2 right-2 shadow appearance-none py-2 px-3 button-solidx mt-2 focus:outline-none focus:shadow-outline" id='submit-button' value='Send Mail'/> 
                     </div>
                 </form>
             </div>
         </div>
     </div>
+
   )}

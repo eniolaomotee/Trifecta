@@ -26,11 +26,11 @@ export default function EditBids(props) {
                             <input type="text" className="shadow appearance-none border rounded w-full py-2 px-3 xtext-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline " placeholder="Enter Tender Title" id='tender-title' name='tender-title'/>
                         </div>
 
-                        <div className="col-span-2 text-left">
+                        <div className="col-span-4 md:col-span-2 text-left">
                             <label className='text-blue-900' htmlFor="client-name">Client</label>
                             <input type="text"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="client-name" placeholder="Enter Client Name" name='client-name'/>
                         </div>
-                        <div className="col-span-2 text-left"> 
+                        <div className="col-span-4 md:col-span-2 text-left"> 
                             <label className='text-blue-900' htmlFor="client-department">Client Department</label>
                             <input type="text"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="client-department" placeholder="Enter Client Department" name='client-department'/>
                         </div>
@@ -62,15 +62,15 @@ export default function EditBids(props) {
                             </select>
                         </div>
                         
-                        <div className="col-span-1 text-left"> 
+                        <div className="col-span-2 md:col-span-1 text-left"> 
                             <label className='text-blue-900' htmlFor="date-submittd">Date Submitted</label>
                             <input type="date"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="date-submittd" placeholder="2/3/2021" name='date-submittd'/>
                         </div>
-                        <div className="col-span-1 text-left"> 
+                        <div className="col-span-2 md:col-span-1 text-left"> 
                             <label className='text-blue-900' htmlFor="deadline">Deadline</label>
                             <input type="date"className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id="deadline" placeholder="2/3/2021" name='deadline'/>
                         </div>
-                        <div className="md:col-span-4 col-span-3 text-left">
+                        <div className="col-span-4 text-left">
                             <label className='text-blue-900' htmlFor="bid-scope">Bid Scope</label><br></br>
                             <textarea className="shadow xappearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline" id='bid-scope' name='bid-scope'>
                             </textarea>
@@ -80,17 +80,17 @@ export default function EditBids(props) {
                         <div className="md:col-span-4 col-span-4 text-left">
                             <label className=' w-full'>Attachment Files (PDF, .docx, jpg formats)</label><br></br>
                             <div className='grid grid-cols-3 gap-3'>
-                                <div>
-                                    <label className='' htmlFor="rfq-file">RFQ:</label><br></br>
-                                    <CustomFileUpload input_id="rfq-file"/>
+                                <div className='col-span-3 md:col-span-1'>
+                                    <label className='' htmlFor="rfq-file-edit">RFQ:</label><br></br>
+                                    <CustomFileUpload input_id="rfq-file-edit"/>
                                 </div>
-                                <div>
-                                    <label className='' htmlFor="fin-credentials-file">Financial Credentials:</label>
-                                    <CustomFileUpload input_id="fin-credentials-file"/>
+                                <div className='col-span-3 md:col-span-1'>
+                                    <label className='' htmlFor="fin-credentials-file-edit">Financial Credentials:</label>
+                                    <CustomFileUpload input_id="fin-credentials-file-edit"/>
                                 </div>
-                                <div>
-                                    <label className='' htmlFor="acceptance-letter">Acceptance Letter:</label>
-                                    <CustomFileUpload input_id="acceptance-letter"/>
+                                <div className='col-span-3 md:col-span-1'>
+                                    <label className='' htmlFor="acceptance-letter-edit">Acceptance Letter:</label>
+                                    <CustomFileUpload input_id="acceptance-letter-edit"/>
                                 </div>
                             </div>
                     </div>

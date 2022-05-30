@@ -3,17 +3,26 @@ import React, { useState } from "react";
 import useTable from "../../../hooks/useTable";
 // import styles from "./Table.module.css";
 import TableFooter from "./TableFooter";
+import EyeIcon from "../../../assets/icons/tables/EyeIcon";
+
+// redux
+import {useDispatch} from 'react-redux';
+import {setDataEquipment} from '../../../redux/actions/setData';
 
 const EquipmentsTable = ({ data, rowsPerPage, handleShow }) => {
   const [page, setPage] = useState(1);
   const { slice, range } = useTable(data, page, rowsPerPage);
+
+  //   redux variables
+  const dispatch = useDispatch();
+
     return (
         <>
-            <div className='xbg-white bg-colr table-holdr sub-contenty'>
+            <div className='xbg-whitex bg-colr table-holdr sub-contenty'>
                 <div className="flex flex-col">
                     <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                         <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                            <div className="shadow overflow-hidden xborder-b xborder-gray-200 xsm:rounded-lg">
+                            <div className="shadow rounded-b-lg overflow-hidden xborder-b xborder-gray-200 xsm:rounded-lg">
                                 <table className="min-w-full divide-y divide-gray-200 xtable-auto">
 
                                     <thead className="table-hd-bg text-sm font-medium">
@@ -36,7 +45,7 @@ const EquipmentsTable = ({ data, rowsPerPage, handleShow }) => {
                                             <th></th>
                                         </tr>
                                     </thead>
-                                    <tbody className="bg-white divide-y divide-gray-200">
+                                    <tbody className="bg-whitex divide-y divide-gray-200">
                                         {slice.map((e) => (
                                             <tr key={e.id}>
                                                 <td className="px-6 py-4 whitespace-nowrap">
@@ -47,9 +56,28 @@ const EquipmentsTable = ({ data, rowsPerPage, handleShow }) => {
                                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">{e.amount}</td>
                                                 <td className="px-3 py-4 whitespace-nowrap text-center">{e.quantity}</td>
                                                 <td className="px-6 py-4 whitespace-nowrap text-sm"><div>{e.last_purchase}</div></td>
-                                                <td><button onClick={handleShow} className="text-xs p-2 xpass">edit</button> </td>
+                                                {/* <td><button onClick={handleShow} className="text-xs p-2 xpass">edit</button> </td> */}
+                                                <td>
+                                                    <button onClick={()=>{
+                                                        dispatch(setDataEquipment(e));
+                                                        handleShow();
+                                                    }} 
+                                                    className="text-xs px-2 py-1 button-solidx flex">
+                                                        <EyeIcon classx="fill-current"/> <span className="my-auto">view</span>
+                                                    </button> 
+                                                </td>
                                             </tr>
                                         ))}
+                                        <tr>
+                                            <td>
+                                                <TableFooter range={range} slice={slice} setPage={setPage} page={page} />
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -57,7 +85,6 @@ const EquipmentsTable = ({ data, rowsPerPage, handleShow }) => {
                     </div>
                 </div>
             </div>
-            <TableFooter range={range} slice={slice} setPage={setPage} page={page} />
         </>
     );
 };

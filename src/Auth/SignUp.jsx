@@ -1,19 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Logo from '../assets/images/logo.png';
+
+// redux
+import {useDispatch} from 'react-redux';
+import {setAuthLogin} from '../redux/actions/setCurrentAuthPage';
 
 
-export default function SignUp() {
+export default function SignUp(props) {
+
+  //   redux variables
+  const dispatch = useDispatch();
+
   return (
-<div className='grid grid-cols-3 dashboardx txt-dark-bluex'>
-      {/* <div className='col-span-1 md:inline-block hidden bg-blue-500'>
-      </div> */}
-      <div className='col-span-1 md:flex hidden bg-dark-bluex justify-center items-center h-screen'>
-        <img src={Logo} alt='Logo'/>
-        {/* <div className='m-auto mt-auto h-12 w-40 text-center py-2 bg-blue-900 text-white'>Logo</div> */}
-      </div>
-      <div className="col-span-3 md:col-span-2 md:px-28 px-10 my-auto">
+
+      <div className={`col-span-3 md:col-span-2 md:px-28 px-10 my-auto ${props.show}`}>
           <h1 className='p-2 pl-0 text-3xl text-left'>Welcome to <span classNAme="text-blue-600">TERP</span></h1>
           <h4 className='pl-0 text-left'>Create an account to gain access into the Trifecta Enterprise Resource software (TERP)</h4>
           <form className='grid grid-cols-2 gap-6 mt-10'>
@@ -59,10 +60,8 @@ export default function SignUp() {
                     <input type="email" className="pl-10 appearance-none border rounded w-full py-2 px-3 text-blue-700 bg-gray-100 mt-2 focus:outline-none focus:shadow-outline " placeholder="Confirm Password" id='login-email' name='login-email'/>
                 </div>
                 <button name="login-btn" id="login-btn" className="p-3 bg-blue-500 text-white rounded" href="#" role="submit">Sign Up</button>
-                <Link name="signin-btn" id="signin-btn" className="border border-blue-900 text-center p-2" href="#" to="/" >Log In</Link>
-                {/* <button name="signin-btn" id="signin-btn" className="border border-blue-900 text-xm" href="#!" ><Link to="/log_in">Log In</Link></button> */}
+                <a name="signin-btn" id="signin-btn" className="border border-blue-900 text-center p-2" href="#"  onClick={()=>{dispatch(setAuthLogin())}}>Log In</a>
           </form>
       </div>
-    </div>
   );
 }
